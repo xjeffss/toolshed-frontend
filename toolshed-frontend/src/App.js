@@ -70,6 +70,8 @@ class App extends Component {
             email= {this.state.email}
             signup= {this.signup}
             signupOnChange = {this.signupOnChange}
+            login = {this.login}
+            loginOnChange = {this.loginOnChange}
               
               />
             )}
@@ -81,25 +83,7 @@ class App extends Component {
           />
 
         </main>
-      <br></br>
 
-        <form className="login" onSubmit={this.login}>
-          <input
-            name='username'
-            type='text'
-            placeholder='username'
-            value={this.state.username}
-            onChange={this.loginOnChange}
-          />
-          <input
-            name='password'
-            type='password'
-            placeholder='password'
-            value={this.state.password}
-            onChange={this.loginOnChange}
-          />
-          <input type='submit' value='Login' />
-        </form>
       </div>
     )
   }

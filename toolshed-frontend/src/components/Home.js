@@ -1,12 +1,13 @@
 import React from 'react';
-import '../User.css'
+import '../Home.css'
 import { Link } from 'react-router-dom';
 
 function Home(props){
     return(
         <div>
-           <h3>Please fill in the information below to Register</h3>
-            <form id="signup" onSubmit={props.signup}>
+           <h3 className ="signup">Please fill in the information below to Register</h3>
+           <br></br>
+            <form className ="signup" onSubmit={props.signup}>
                 Name: <input type="text" 
                 name="firstName" 
                 defaultValue="First"
@@ -21,7 +22,7 @@ function Home(props){
                 Username: <input type="text" name="username" 
                 value={props.userame}
                 onChange={props.signupOnChange}/><br/>
-                Password: <input type="text" name="password" 
+                Password: <input type="password" name="password" 
                 value={props.password}
                 onChange={props.signupOnChange}/><br/>
                 Email (for notifications):
@@ -33,6 +34,25 @@ function Home(props){
                 /><br/>
 
                 <input type="submit" name="" value="Signup" />
+            </form>
+            <br></br>
+
+            <form className="login" onSubmit={props.login}>
+            <input
+                name='username'
+                type='text'
+                placeholder='username'
+                value={props.username}
+                onChange={props.loginOnChange}
+            />
+            <input
+                name='password'
+                type='password'
+                placeholder='password'
+                value={props.password}
+                onChange={props.loginOnChange}
+            />
+            <input type='submit' value='Login' />
             </form>
         </div>
     )
