@@ -20,6 +20,10 @@ class App extends Component {
       email: ''
     };
   }
+
+  // componentDidMount = () => {
+  //   this.getUser
+  // }
   loginOnChange = (e) => {
     e.preventDefault();
     this.setState({
@@ -31,6 +35,7 @@ class App extends Component {
     const data = {
       username: this.state.username,
       password: this.state.password,
+
     };
     console.log(data);
     const response = await axios.post('http://localhost:3001/auth/login', data);
@@ -78,10 +83,18 @@ class App extends Component {
             />
           <Route path="/Neighborhood/:id" render = {()=> (
             <Neighborhood
+            firstName = {this.state.firstName}
+            lastName = {this.state.lastName} 
 
           />)}
           />
+          <Route path="/User/:id" render = {()=> (
+            <User
+            firstName = {this.state.firstName}
+            lastName = {this.state.lastName} 
 
+          />)}
+          />
         </main>
 
       </div>

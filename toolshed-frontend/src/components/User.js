@@ -2,10 +2,11 @@ import React from 'react';
 import '../User.css'
 import { Link } from 'react-router-dom';
 
-function User(){
+function User(props){
+    console.log(props.id)
     return(
         <div>
-            Hello User
+            Hello {props.firstName}
         </div>
     )
 }
