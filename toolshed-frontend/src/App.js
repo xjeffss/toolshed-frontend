@@ -5,7 +5,7 @@ import { Route, Link, Redirect } from 'react-router-dom';
 
 import Addhood from './components/Addhood';
 import Neighborhood from './components/Neighborhood';
-import Register from './components/Register';
+import Register from './components/Home';
 import User from './components/User';
 import Home from './components/Home';
 
@@ -60,14 +60,9 @@ class App extends Component {
       <div className="App">
         Neighborhood Toolshed
         <main>
-          <Route exact path="/" render = {() => (
-                 <Home 
 
-                 />
-          )} 
-          />
-          <Route path="/Register" render = {() => (
-            <Register 
+          <Route path="/" render = {() => (
+            <Home 
             firstName = {this.state.firstName}
             lastName = {this.state.lastName}     
             username= {this.state.username}
