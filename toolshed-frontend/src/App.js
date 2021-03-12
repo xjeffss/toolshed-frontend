@@ -73,6 +73,8 @@ class App extends Component {
             username= {this.state.username}
             password= {this.state.password}
             email= {this.state.email}
+            signup= {this.signup}
+            signupOnChange = {this.signupOnChange}
               
               />
             )}
