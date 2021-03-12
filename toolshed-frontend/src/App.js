@@ -1,6 +1,7 @@
-import React, {Component, Link, Route} from 'react';
+import React, {Component} from 'react';
 import axios from 'axios';
 import './App.css';
+import { Route, Link, Redirect } from 'react-router-dom';
 
 import Addhood from './components/Addhood';
 import Neighborhood from './components/Neighborhood';

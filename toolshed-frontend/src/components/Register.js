@@ -6,30 +6,30 @@ function Register(props){
     return(
         <div>
            <h3>Please fill in the information below to Register</h3>
-            <form id="signup" onSubmit={this.signup}>
+            <form id="signup" onSubmit={props.signup}>
                 Name: <input type="text" 
                 name="firstName" 
                 defaultValue="First"
-                value={this.state.firstName}
-                onChange={this.signupOnChange}/>
+                value={props.firstName}
+                onChange={props.signupOnChange}/>
                 <input type="text" 
                 name="lastName" 
                 defaultValue="Last"
-                value={this.state.lastName}
-                onChange={this.signupOnChange}/>
+                value={props.lastName}
+                onChange={props.signupOnChange}/>
                 <br/>
                 Username: <input type="text" name="username" 
-                value={this.state.userame}
-                onChange={this.signupOnChange}/><br/>
+                value={props.userame}
+                onChange={props.signupOnChange}/><br/>
                 Password: <input type="text" name="password" 
-                value={this.state.password}
-                onChange={this.signupOnChange}/><br/>
+                value={props.password}
+                onChange={props.signupOnChange}/><br/>
                 Email (for notifications):
                 <input type="email" 
                 name="email" 
                 defaultValue="optional"
-                value={this.state.email}
-                onChange={this.signupOnChange}
+                value={props.email}
+                onChange={props.signupOnChange}
                 /><br/>
 
                 <input type="submit" name="" value="Signup" />
