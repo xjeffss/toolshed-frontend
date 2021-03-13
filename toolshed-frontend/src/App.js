@@ -17,7 +17,8 @@ class App extends Component {
       lastName: '',
       username: '',
       password: '',
-      email: ''
+      email: '',
+      id: null
     };
   }
 
@@ -39,7 +40,13 @@ class App extends Component {
     };
     console.log(data);
     const response = await axios.post('http://localhost:3001/auth/login', data);
-    console.log(response);
+    console.log(response.data);
+    this.setState({
+      firstName: response.data.firstName,
+      lastName: response.data.lastName,  
+      id: response.data.id
+    }
+    );
   };
   signupOnChange = (e) => {
     e.preventDefault();
@@ -60,13 +67,14 @@ class App extends Component {
     const response = await axios.post('http://localhost:3001/auth/signup', data);
     console.log(response);
   };
-  render(){
+  render(){   console.log(this.state.firstName, this.state.id)
+ 
     return (
       <div className="App">
         Neighborhood Toolshed
         <main>
 
-          <Route path="/" render = {() => (
+          <Route exact path="/" render = {(routerProps) => (
             <Home 
             firstName = {this.state.firstName}
             lastName = {this.state.lastName}     
@@ -77,22 +85,25 @@ class App extends Component {
             signupOnChange = {this.signupOnChange}
             login = {this.login}
             loginOnChange = {this.loginOnChange}
-              
+            {...routerProps} 
               />
             )}
             />
-          <Route path="/Neighborhood/:id" render = {()=> (
+          <Route path="/neighborhood/:id" render = {(routerProps)=> (
             <Neighborhood
             firstName = {this.state.firstName}
             lastName = {this.state.lastName} 
-
+            {...routerProps}
           />)}
           />
-          <Route path="/User/:id" render = {()=> (
+          <Route path="/user/:id" render = {(routerProps)=> (
             <User
+            
             firstName = {this.state.firstName}
             lastName = {this.state.lastName} 
-
+            id = {this.state.id}
+            {...routerProps}
+            
           />)}
           />
         </main>
