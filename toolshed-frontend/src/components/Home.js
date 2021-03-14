@@ -1,39 +1,48 @@
-import React from 'react';
+import React, { Component } from 'react';
 import '../Home.css'
-import { Link } from 'react-router-dom';
+import { Route, withRouter, Link } from 'react-router-dom';
 import User from './User';
 
-function Home(props){
-    console.log(props.id)
+class Home extends Component {
+    constructor(props){  
+        console.log(props.id) 
+    super(props);
+    this.state = {
+        user: props.username,
+        id: props.id
+    }
+     
+}
+render(){
     return(
         <div>
            <h3 className ="signup">Please fill in the information below to Register</h3>
            <br></br>
            
-            <form className ="signup" action="/users/:id" onSubmit={props.signup}>
+            <form className ="signup" onSubmit={(e) => this.props.signup(e, this.state)}>
                 Name: <input type="text" 
                 name="firstName" 
                 placeholder="First"
-                value={props.firstName}
-                onChange={props.signupOnChange}/>
+                value={this.props.firstName}
+                onChange={this.props.signupOnChange}/>
                 <input type="text" 
                 name="lastName" 
                 placeholder="Last"
-                value={props.lastName}
-                onChange={props.signupOnChange}/>
+                value={this.props.lastName}
+                onChange={this.props.signupOnChange}/>
                 <br/>
                 Username: <input type="text" name="username" 
-                value={props.userame}
-                onChange={props.signupOnChange}/><br/>
+                value={this.props.userame}
+                onChange={this.props.signupOnChange}/><br/>
                 Password: <input type="password" name="password" 
-                value={props.password}
-                onChange={props.signupOnChange}/><br/>
+                value={this.props.password}
+                onChange={this.props.signupOnChange}/><br/>
                 Email (for notifications):
                 <input type="email" 
                 name="email" 
                 placeholder="optional"
-                value={props.email}
-                onChange={props.signupOnChange}
+                value={this.props.email}
+                onChange={this.props.signupOnChange}
                 /><br/>
                
                 <input type="submit" name="" value="Signup" />
@@ -41,27 +50,27 @@ function Home(props){
                
             </form>
             <br></br>
-            
-            <form className="login" onSubmit={props.login} >
+        
+            <form className="login" onSubmit={(e) => this.props.login(e, this.state)}>
             
             <input
                 name='username'
                 type='text'
                 placeholder='username'
-                value={props.username}
-                onChange={props.loginOnChange}
+                value={this.props.username}
+                onChange={this.props.loginOnChange}
             />
             <input
                 name='password'
                 type='password'
                 placeholder='password'
-                value={props.password}
-                onChange={props.loginOnChange}
-            />
-            <input type='submit' value='Login' />
+                value={this.props.password}
+                onChange={this.props.loginOnChange}
+            /> 
+            <input type='submit'  value='Login' />
             </form> 
         </div>
     )
 }
-
+}
 export default Home;

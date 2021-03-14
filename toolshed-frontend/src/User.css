@@ -1,0 +1,18 @@
+.greet {
+    text-align: center;
+    align-items: center;
+}
+
+.create {
+    text-align: center;
+    display: flex;
+    align-items: center;
+    font-size: 16pt;
+    margin-top: 50vh;
+}
+
+.createLocalhood {
+    align-items:flex-end;
+
+
+}

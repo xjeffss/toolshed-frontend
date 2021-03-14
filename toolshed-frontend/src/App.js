@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import axios from 'axios';
 import './App.css';
-import { Route, Link, Redirect } from 'react-router-dom';
+import { Route, Link, withRouter, } from 'react-router-dom';
 
 import Addhood from './components/Addhood';
 import Neighborhood from './components/Neighborhood';
@@ -30,6 +30,8 @@ class App extends Component {
   // componentDidMount = () => {
   //   this.getUser
   // }
+
+  
   loginOnChange = (e) => {
     e.preventDefault();
     this.setState({
@@ -41,7 +43,7 @@ class App extends Component {
     const data = {
       username: this.state.username,
       password: this.state.password,
-
+      id: this.state.id
     };
     console.log(data);
     const response = await axios.post('http://localhost:3001/auth/login', data);
@@ -52,6 +54,7 @@ class App extends Component {
       id: response.data.id
     }
     );
+    this.props.history.push(`/user/${this.state.id}`)
   };
   signupOnChange = (e) => {
     e.preventDefault();
@@ -91,7 +94,7 @@ addTool = async (e) => {
       toolBrand: this.state.toolBrand,
       category: this.state.category,
       details: this.state.details,
-      userId: 1
+      userId: this.state.id
   };
     console.log(data);
     const response = await axios.post('http://localhost:3001/user/addtool', data);
@@ -125,6 +128,7 @@ addHood = async (e) => {
             username= {this.state.username}
             password= {this.state.password}
             email= {this.state.email}
+            id = {this.state.id}
             signup= {this.signup}
             signupOnChange = {this.signupOnChange}
             login = {this.login}
@@ -156,6 +160,10 @@ addHood = async (e) => {
             neighborhoodName= {this.state.neighborhoodName}
             addHood= {this.addHood}
             addHoodOnChange= {this.addHoodOnChange}
+            signup= {this.signup}
+            signupOnChange = {this.signupOnChange}
+            login = {this.login}
+            loginOnChange = {this.loginOnChange}
             {...routerProps}
             
           />)}
@@ -168,4 +176,4 @@ addHood = async (e) => {
   ;
 }
 
-export default App;
+export default withRouter(App);
