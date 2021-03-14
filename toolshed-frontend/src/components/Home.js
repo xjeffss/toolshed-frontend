@@ -10,7 +10,7 @@ function Home(props){
            <h3 className ="signup">Please fill in the information below to Register</h3>
            <br></br>
            
-            <form className ="signup" onSubmit={props.signup}>
+            <form className ="signup" action="/users/:id" onSubmit={props.signup}>
                 Name: <input type="text" 
                 name="firstName" 
                 placeholder="First"
@@ -36,7 +36,7 @@ function Home(props){
                 onChange={props.signupOnChange}
                 /><br/>
                
-                    <input type="submit" name="" value="Signup" />
+                <input type="submit" name="" value="Signup" />
                 
                
             </form>

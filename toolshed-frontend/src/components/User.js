@@ -11,31 +11,31 @@ function User(props){
                 Tool Name: <input type="text" 
                 name="toolName" 
                 value={props.toolName}
-                onChange={props.signupOnChange}/>
+                onChange={props.addToolOnChange}/>
                 <br/>
                 Tool Brand: <input type="text" name="toolBrand" 
                 value={props.toolBrand}
-                onChange={props.signupOnChange}/><br/>
+                onChange={props.addToolOnChange}/><br/>
                 Category: <input type="text" name="category" 
                 value={props.category}
-                onChange={props.signupOnChange}/><br/>
+                onChange={props.addToolOnChange}/><br/>
                 Details:
                 <input type="text" 
                 name="details" 
                 value={props.details}
-                onChange={props.signupOnChange}
+                onChange={props.addToolOnChange}
                 /><br/>         
-                    <input type="submit" name="" value="Add Tool" />    
+                <input type="submit" value="Add Tool" />    
             </form>
             <br></br>
-            <form className="createLocalhood" onSubmit={props.createLocalhood} >
+            <form className="createLocalhood" onSubmit={props.addHood} >
             Create Neighborhood
             <input
-                name='neighborhood'
+                name='neighborhoodName'
                 type='text'
                 placeholder='neighborhood'
-                value={props.localhood}
-                onChange={props.loginOnChange}
+                value={props.neighborhoodName}
+                onChange={props.addHoodOnChange}
             />
             <input type='submit' value='Create Neighborhood' />
             </form> 

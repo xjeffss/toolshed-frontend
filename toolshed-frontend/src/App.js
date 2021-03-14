@@ -5,7 +5,6 @@ import { Route, Link, Redirect } from 'react-router-dom';
 
 import Addhood from './components/Addhood';
 import Neighborhood from './components/Neighborhood';
-import Register from './components/Home';
 import User from './components/User';
 import Home from './components/Home';
 
@@ -18,7 +17,13 @@ class App extends Component {
       username: '',
       password: '',
       email: '',
-      id: null
+      id: null,
+      toolName: '',
+      toolBrand: '',
+      category: '',
+      details: '',
+      neighborhood: '',
+      userId: null
     };
   }
 
@@ -66,9 +71,48 @@ class App extends Component {
     console.log(data);
     const response = await axios.post('http://localhost:3001/auth/signup', data);
     console.log(response);
+    this.setState({
+      firstName: response.data.firstName,
+      lastName: response.data.lastName,  
+      id: response.data.id
+    }
+    );
   };
-  render(){   console.log(this.state.firstName, this.state.id)
- 
+addToolOnChange = (e) => {
+  e.preventDefault();
+  this.setState({
+    [e.target.name]: e.target.value,
+  });
+};
+addTool = async (e) => {
+    e.preventDefault();
+    const data = {
+      toolName: this.state.toolName,
+      toolBrand: this.state.toolBrand,
+      category: this.state.category,
+      details: this.state.details,
+      userId: 1
+  };
+    console.log(data);
+    const response = await axios.post('http://localhost:3001/user/addtool', data);
+    console.log(response);
+};
+addHoodOnChange = (e) => {
+  e.preventDefault();
+  this.setState({
+    [e.target.name]: e.target.value,
+  });
+};
+addHood = async (e) => {
+    e.preventDefault();
+    const data = {
+      neighborhoodName: this.state.neighborhoodName,
+  };
+    console.log(data);
+    const response = await axios.post('http://localhost:3001/neighborhood/addhood', data);
+    console.log(response);
+};
+  render(){   
     return (
       <div className="App">
         Neighborhood Toolshed
@@ -102,6 +146,16 @@ class App extends Component {
             firstName = {this.state.firstName}
             lastName = {this.state.lastName} 
             id = {this.state.id}
+            toolName= {this.state.toolName}
+            toolBrand= {this.state.toolBrand}
+            category= {this.state.category}
+            details= {this.state.details}
+            userId= {this.state.id}
+            addTool= {this.addTool}
+            addToolOnChange= {this.addToolOnChange}
+            neighborhoodName= {this.state.neighborhoodName}
+            addHood= {this.addHood}
+            addHoodOnChange= {this.addHoodOnChange}
             {...routerProps}
             
           />)}
