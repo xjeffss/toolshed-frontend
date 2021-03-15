@@ -111,11 +111,13 @@ addHood = async (e) => {
     e.preventDefault();
     const data = {
       neighborhoodName: this.state.neighborhoodName,
+      neighborhoodPasscode: this.state.neighborhoodPasscode
   };
     console.log(data);
     const response = await axios.post('http://localhost:3001/neighborhood/addhood', data);
     console.log(response);
 };
+
   render(){   
     return (
       <div className="App">

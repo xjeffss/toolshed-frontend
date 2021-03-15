@@ -10,10 +10,10 @@ class User extends Component {
         this.state = {
             user: props.username,
             id: this.props.id,
+            neighborhoodName: this.props.neighborhoodName,
             toolName: "",
             userId: null,
             tools: [],
-            dbdataLoaded: false
         }    
     }   
 componentDidMount= () => {
@@ -31,10 +31,21 @@ getTools = async () => {
     console.log(response.data)
     this.setState ({
         tools: response.data, 
-        dbdataLoaded: true
     }
     )
 }
+joinHood = async (e) => {
+    e.preventDefault();
+    const data = {
+      neighborhoodName: this.state.neighborhoodName,
+      userId: this.state.id,
+      toolId: 1
+      
+  };
+    console.log(data);
+    const response = await axios.post('http://localhost:3001/neighborhood/joinhood', data);
+    console.log(response);
+};
 
 render(){console.log(this.state.tools)
 
@@ -48,9 +59,7 @@ render(){console.log(this.state.tools)
             <div>Here are your Tools
             {this.state.tools.map(tool => (               
               <li> {tool.toolName}</li>
-            
            )
-          
         )}</div>
 
             <div className="create">
