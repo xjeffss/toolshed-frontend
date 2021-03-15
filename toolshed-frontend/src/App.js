@@ -22,7 +22,8 @@ class App extends Component {
       toolBrand: '',
       category: '',
       details: '',
-      neighborhood: '',
+      neighborhoodName: '',
+      neighborhoodPasscode: '',
       userId: null
     };
   }
@@ -158,6 +159,7 @@ addHood = async (e) => {
             addTool= {this.addTool}
             addToolOnChange= {this.addToolOnChange}
             neighborhoodName= {this.state.neighborhoodName}
+            neighborhoodPasscode= {this.state.neighborhoodPasscode}
             addHood= {this.addHood}
             addHoodOnChange= {this.addHoodOnChange}
             signup= {this.signup}

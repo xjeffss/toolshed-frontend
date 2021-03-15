@@ -12,32 +12,47 @@ class User extends Component {
             id: this.props.id,
             toolName: "",
             userId: null,
-            tools: []
+            tools: [],
+            dbdataLoaded: false
         }    
     }   
+componentDidMount= () => {
+    this.getTools();
 
+}
 getTools = async () => {
     console.log(this.props.id)
+    
     const data = {
         id: this.props.id
       };
       console.log(data)
-    const response = await axios.get('http://localhost:3001/user/gettools', data);
-    console.log(response)
-    this.setState=({
-        tools: [response.toolName]
-    })
+    const response = await axios.post('http://localhost:3001/user/gettools', data);
+    console.log(response.data)
+    this.setState ({
+        tools: response.data, 
+        dbdataLoaded: true
+    }
+    )
 }
 
-render(){
-    return(
-        <div>
-             <h2 className="greet">Hello {this.props.firstName}
-                 </h2>
-            <div onClick={this.getTools}>
-                Here are your Tools
-       
+render(){console.log(this.state.tools)
+
+    return (
+        <div>   
+            <div>
+            <h2 className="greet">Hello {this.props.firstName}
+                </h2>
             </div>
+
+            <div>Here are your Tools
+            {this.state.tools.map(tool => (               
+              <li> {tool.toolName}</li>
+            
+           )
+          
+        )}</div>
+
             <div className="create">
 
             <form className ="addTool" onSubmit={this.props.addTool}>
@@ -70,10 +85,18 @@ render(){
                 value={this.props.neighborhoodName}
                 onChange={this.props.addHoodOnChange}
             />
+            <input
+                name= 'neighborhoodPasscode'
+                text= 'text'
+                placeholder= 'passcode'
+                value={this.props.neighborhoodPasscode}
+                onChange={this.props.addHoodOnChange}               
+            >
+            </input>
             <input type='submit' value='Create Neighborhood' />
             </form> 
             </div>
-            
+           
         </div>
     )
 }
