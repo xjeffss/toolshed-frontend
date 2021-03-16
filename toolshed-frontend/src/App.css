@@ -9,3 +9,15 @@ body {
   background: rgb(99, 190, 243);
 }
 
+
+#cloud-circle {
+  width: 80vw;
+  height: 30vh;
+  background: #000;
+  border-radius: 50%;
+  filter: url(#filter);
+  box-shadow: 40vw 40vh 6vw 0vw #fff; /* Increase shadow offset */
+  position: absolute; /* Take the parent out of the document flow */
+  top: -320px; /* Move a little down */
+  left: -320px; /* Move a little right */
+}

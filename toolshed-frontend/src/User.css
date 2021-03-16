@@ -8,6 +8,8 @@
     background: gray;
     width: 80vw;
     height: 70vw;
+    border: rgb(95, 48, 14) solid ;
+    border-width: 20px 20px 0px 20px;
 }
 .lists {
     font-size: 4vw;

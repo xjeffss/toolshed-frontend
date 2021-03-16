@@ -15,7 +15,7 @@ class Home extends Component {
 }
 render(){
     return(
-        <div>
+        <div >
            <h3 className ="signup">Please fill in the information below to Register</h3>
            <br></br>
            
