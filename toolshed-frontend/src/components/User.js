@@ -52,15 +52,21 @@ render(){console.log(this.state.tools)
     return (
         <div>   
             <div>
-            <h2 className="greet">Hello {this.props.firstName}
+            <h2 className="greet">{this.props.firstName}'s Shed
                 </h2>
             </div>
-
-            <div>Here are your Tools
+        <div className="shed">
+            <div className="lists">Here are your Tools
             {this.state.tools.map(tool => (               
               <li> {tool.toolName}</li>
            )
         )}</div>
+            <div className="lists">Here are your Tools
+            {this.state.tools.map(tool => (               
+              <li> {tool.toolName}</li>
+           )
+        )}</div>
+        </div>
 
             <div className="create">
 
