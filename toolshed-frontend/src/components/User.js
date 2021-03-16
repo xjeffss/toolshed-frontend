@@ -30,10 +30,12 @@ getTools = async () => {
         id: this.props.id
       };
       console.log(data)
-    const response = await axios.post('http://localhost:3001/user/gettools', data);
-    console.log(response.data)
+    const userResponse = await axios.post('http://localhost:3001/user/gettools', data);
+    const hoodResponse = await axios.post('http://localhost:3001/user/gethood', data);
+    console.log(userResponse)
     this.setState ({
-        tools: response.data, 
+        tools: userResponse.data, 
+        neighborhoods: hoodResponse.data
     }
     )
 }
@@ -59,7 +61,7 @@ joinHoodOnChange = (e) => {
     });
   };
 
-render(){console.log(this.state.tools)
+render(){console.log(this.state.neighborhoods)
 
     return (
         <div>   
@@ -75,8 +77,9 @@ render(){console.log(this.state.tools)
         )}</div>
             <div className="lists">Here are your Neighborhoods
             {this.state.neighborhoods.map(neighborhood => (               
-              <Link to={`/neighborhood/${neighborhood.id}`}><li> {neighborhood.neighborhoodName}</li>
-              </Link>
+            //   <Link to={`/neighborhood/${neighborhood.id}`}>
+                  <li> {neighborhood.Neighborhood.neighborhoodName}</li>
+            //   </Link>
            )
         )}</div>
         </div>
