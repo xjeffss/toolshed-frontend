@@ -93,6 +93,7 @@ render(){console.log(this.state.tools)
             <br></br>
             <form className="createLocalhood" onSubmit={this.props.addHood} >
             Create Neighborhood
+            <br></br>
             <input
                 name='neighborhoodName'
                 type='text'
@@ -100,6 +101,7 @@ render(){console.log(this.state.tools)
                 value={this.props.neighborhoodName}
                 onChange={this.props.addHoodOnChange}
             />
+            <br></br>
             <input
                 name= 'neighborhoodPasscode'
                 text= 'text'
@@ -108,6 +110,7 @@ render(){console.log(this.state.tools)
                 onChange={this.props.addHoodOnChange}               
             >
             </input>
+            <br></br>
             <input type='submit' value='Create Neighborhood' />
             </form> 
             </div>
