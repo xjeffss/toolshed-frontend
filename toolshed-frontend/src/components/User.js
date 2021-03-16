@@ -11,9 +11,11 @@ class User extends Component {
             user: props.username,
             id: this.props.id,
             neighborhoodName: this.props.neighborhoodName,
+            neighborhoodPasscode: this.props.neighborhoodPasscode,
             toolName: "",
             userId: null,
             tools: [],
+            neighborhoods: []
         }    
     }   
 componentDidMount= () => {
@@ -21,6 +23,7 @@ componentDidMount= () => {
 
 }
 getTools = async () => {
+
     console.log(this.props.id)
     
     const data = {
@@ -34,18 +37,27 @@ getTools = async () => {
     }
     )
 }
+
 joinHood = async (e) => {
     e.preventDefault();
     const data = {
       neighborhoodName: this.state.neighborhoodName,
-      userId: this.state.id,
-      toolId: 1
-      
+      neighborhoodPasscode: this.state.neighborhoodPasscode,
+      userId: this.state.id,    
   };
     console.log(data);
     const response = await axios.post('http://localhost:3001/neighborhood/joinhood', data);
     console.log(response);
+    this.setState ({
+        neighborhoods:response
+    })
 };
+joinHoodOnChange = (e) => {
+    e.preventDefault();
+    this.setState({
+      [e.target.name]: e.target.value,
+    });
+  };
 
 render(){console.log(this.state.tools)
 
@@ -61,9 +73,10 @@ render(){console.log(this.state.tools)
               <li> {tool.toolName}</li>
            )
         )}</div>
-            <div className="lists">Here are your Tools
-            {this.state.tools.map(tool => (               
-              <li> {tool.toolName}</li>
+            <div className="lists">Here are your Neighborhoods
+            {this.state.neighborhoods.map(neighborhood => (               
+              <Link to={`/neighborhood/${neighborhood.id}`}><li> {neighborhood.neighborhoodName}</li>
+              </Link>
            )
         )}</div>
         </div>
@@ -91,14 +104,16 @@ render(){console.log(this.state.tools)
                 <input type="submit" value="Add Tool" />    
             </form>
             <br></br>
-            <form className="createLocalhood" onSubmit={this.props.addHood} >
+            <div  className="createLocalhood">
+
+            <form onSubmit={this.props.addHood} >
             Create Neighborhood
             <br></br>
             <input
                 name='neighborhoodName'
                 type='text'
                 placeholder='neighborhood'
-                value={this.props.neighborhoodName}
+                value={this.state.neighborhoodName}
                 onChange={this.props.addHoodOnChange}
             />
             <br></br>
@@ -106,13 +121,37 @@ render(){console.log(this.state.tools)
                 name= 'neighborhoodPasscode'
                 text= 'text'
                 placeholder= 'passcode'
-                value={this.props.neighborhoodPasscode}
+                value={this.state.neighborhoodPasscode}
                 onChange={this.props.addHoodOnChange}               
             >
             </input>
             <br></br>
             <input type='submit' value='Create Neighborhood' />
             </form> 
+            <br></br>
+            <form  onSubmit={this.joinHood} >
+            Join Neighborhood
+            <br></br>
+            <input
+                name='neighborhoodName'
+                type='text'
+                placeholder='neighborhood'
+                value={this.state.neighborhoodName}
+                onChange={this.joinHoodOnChange}
+            />
+            <br></br>
+            <input
+                name= 'neighborhoodPasscode'
+                text= 'text'
+                placeholder= 'passcode'
+                value={this.state.neighborhoodPasscode}
+                onChange={this.joinHoodOnChange}               
+            >
+            </input>
+            <br></br>
+            <input type='submit' value='Join Neighborhood' />
+            </form> 
+            </div>
             </div>
            
         </div>

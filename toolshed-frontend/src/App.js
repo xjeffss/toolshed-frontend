@@ -143,8 +143,9 @@ addHood = async (e) => {
           <Route path="/neighborhood/:id" render = {(routerProps)=> (
             <Neighborhood
             firstName = {this.state.firstName}
-            lastName = {this.state.lastName} 
-            {...routerProps}
+            lastName = {this.state.lastName}
+            neighborhoodId= {routerProps.match.params.id} 
+
           />)}
           />
           <Route path="/user/:id" render = {(routerProps)=> (

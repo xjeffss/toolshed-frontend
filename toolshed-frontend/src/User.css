@@ -33,7 +33,10 @@
 }
 
 .createLocalhood {
-
+    text-align: center;
+    display: flex;
+    align-items: center;
+    align-content: space-between;
 
 
 }
