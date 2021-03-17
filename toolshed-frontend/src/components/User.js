@@ -75,13 +75,14 @@ render(){console.log(this.state.neighborhoods)
         <div className="shed">
             <div className="lists">Here are your Tools
             {this.state.tools.map(tool => (               
-              <li> {tool.toolName}</li>
+              <li> {tool.toolName}<button onSubmit={this.deleteTools}>Delete Tool</button>
+              </li>
            )
         )}</div>
             <div className="lists">Here are your Neighborhoods
             {this.state.neighborhoods.map(neighborhood => (               
               <Link to={`/neighborhood/${neighborhood.Neighborhood.id}`}>
-                  <li> {neighborhood.Neighborhood.neighborhoodName}</li>
+                  <li> {neighborhood.Neighborhood.neighborhoodName}<button onSubmit={this.leaveHood}>Leave Neighborhood</button></li>
               </Link>
            )
         )}
@@ -108,7 +109,8 @@ render(){console.log(this.state.neighborhoods)
                 value={this.props.details}
                 onChange={this.props.addToolOnChange}
                 /><br/>         
-                <input type="submit" value="Add Tool" />    
+                <input type="submit" value="Add Tool" />   
+                 
             </form>
             <br></br>
             <div  className="createLocalhood">
@@ -157,6 +159,7 @@ render(){console.log(this.state.neighborhoods)
             </input>
             <br></br>
             <input type='submit' value='Join Neighborhood' />
+            
             </form> 
             </div>
             </div>

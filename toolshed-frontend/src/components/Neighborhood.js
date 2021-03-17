@@ -21,6 +21,7 @@ componentDidMount= async () =>{
     })
 }
 getNeighbors = async () => {
+    console.log(this.props.neighborhoodId)
     const response = await axios.get(`http://localhost:3001/neighborhood/${this.props.neighborhoodId}`)
     console.log(response)
     return response;
