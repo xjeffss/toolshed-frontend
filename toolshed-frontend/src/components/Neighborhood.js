@@ -8,12 +8,15 @@ class Neighborhood extends Component{
         super(props);
         this.state ={
             tools: [],
+            users: []
         }
     }
 
 componentDidMount= async () =>{
+    
     const users= await this.getNeighbors();
-    const newUsers= await this.getTools(users);
+    console.log(users)
+    const newUsers= await this.getHoodTools(users);
     console.log(newUsers)
     this.setState( {
         users: newUsers,
@@ -23,14 +26,15 @@ componentDidMount= async () =>{
 getNeighbors = async () => {
     console.log(this.props.neighborhoodId)
     const response = await axios.get(`http://localhost:3001/neighborhood/${this.props.neighborhoodId}`)
-    console.log(response)
-    return response;
+    console.log(response.data)
+return response
 }
-getTools = async (users)=> {
+getHoodTools = async (users)=> {
+    console.log(users)
     const newUsers = users.map(async(user) => {
     
     const data = {
-        id: user.id
+        id: user.userId
       };
       console.log(data)
     const response = await axios.post('http://localhost:3001/user/gettools', data);

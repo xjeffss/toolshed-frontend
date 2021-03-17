@@ -1,31 +1,71 @@
 .greet {
-    text-align: center;
+
+    margin: 2vw;
     position: absolute;
-    margin-top: 18vh;
+    margin-top: 12vh;
     margin-left: 9vw;
     width: 0; 
     height: 0; 
     border-left: 40vw solid transparent;
     border-right: 40vw solid transparent;
     border-bottom: 20vw solid rgb(95, 48, 14);
-    text-align: center;
-    align-items: center;
-    
 }
+h2 {
+    display: block;
+    margin-top: 10vh;
+
+    font-size: 4vh;
+    color:lemonchiffon;
+}
+#cloud-circle {
+    width: 80vw;
+    height: 30vh;
+    margin-top: -40vh;
+    border-radius: 50%;
+    filter: url(#filter);
+    box-shadow: 40vw 40vh 6vw 0vw #fff; /* Increase shadow offset */
+    position: absolute; /* Take the parent out of the document flow */
+    margin-left: -150vw;
+    animation-name: slideLeft;
+    animation-duration: 20s;
+    animation-iteration-count: infinite;
+    animation-timing-function:linear;
+    
+  }
+
+  @keyframes slideLeft{
+    from{
+        margin-left: -150vw;
+      }
+    
+    to {
+        margin-left: 100vw;
+      
+      }
+  }
+
 .garagedoor  {
-    background: darkblue;
+    background: rgb(49, 49, 63);
     margin-top: 45vh;
     position: absolute;
     width: 70vw;
-    height: 50vw;
-    margin-left: 0vw;
-    -webkit-transition: background-position 0.6s ease;
-    -moz-transition: background-position 0.6s ease;
-    -ms-transition: background-position 0.6s ease;
-    -o-transition: background-position 0.6s ease;
-    transition: background-position 0.6s ease;
-    background-position: 0 -100px;
+    height: 0vh;
+    margin-left: 14vw;
     animation-name: slideOutUp;
+    animation-duration: 2s ;
+    animation-timing-function:linear;
+    
+  }
+
+  @keyframes slideOutUp{
+    from{
+        height: 60vh;
+      }
+    
+    to {
+        height: 0vw;
+      
+      }
   }
   
   /* .garagedoor :hover {
@@ -40,6 +80,7 @@
     height: 60vh;
     border: rgb(95, 48, 14) solid ;
     border-width: 4vw 4vw 0px 4vw;
+    
 }
 .lists {
     font-size: 3vw;
@@ -53,12 +94,11 @@
     text-align: center;
     display: inline-flex;
     align-items: center;
-    align-content: space-between;
+    align-content: space-around;
     font-size: 2.5vw;
     width: 100vw;
     margin-top: 100vh;
-
-    padding: 10px;
+    
 }
 
 .createLocalhood {
@@ -66,8 +106,7 @@
     display: flex;
     align-items: center;
     align-content: space-between;
-
-
+    padding: 5vw;
 }
 
 

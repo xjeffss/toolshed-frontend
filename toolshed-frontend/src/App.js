@@ -47,16 +47,19 @@ class App extends Component {
       id: this.state.id
     };
     console.log(data);
-    const response = await axios.post('http://localhost:3001/auth/login', data);
+    const response = await axios.post('http://localhost:3001/auth/login' || 'https://neighborhood-toolshed.herokuapp.com/auth/login', data);
     console.log(response.data);
+    localStorage.setItem("userId", data.id)
+    localStorage.setItem("username", data.username)
+    localStorage.setItem("password", data.password)
     this.setState({
-      firstName: response.data.firstName,
-      lastName: response.data.lastName,  
-      id: response.data.id
+      firstName: response.data.user.firstName,
+      lastName: response.data.user.lastName,  
+      id: response.data.user.id
     }
     );
     this.props.history.push(`/user/${this.state.id}`)
-  };
+      };
   signupOnChange = (e) => {
     e.preventDefault();
     this.setState({
@@ -100,6 +103,7 @@ addTool = async (e) => {
     console.log(data);
     const response = await axios.post('http://localhost:3001/user/addtool', data);
     console.log(response);
+    window.location.reload()
 };
 addHoodOnChange = (e) => {
   e.preventDefault();
@@ -116,12 +120,16 @@ addHood = async (e) => {
     console.log(data);
     const response = await axios.post('http://localhost:3001/neighborhood/addhood', data);
     console.log(response);
+    window.location.reload()
 };
 
   render(){   
     return (
       <div className="App">
-        Neighborhood Toolshed
+        <h1>
+           Neighborhood Toolshed
+        </h1>
+       
         <main>
 
           <Route exact path="/" render = {(routerProps) => (

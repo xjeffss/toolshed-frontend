@@ -64,14 +64,13 @@ joinHoodOnChange = (e) => {
 render(){console.log(this.state.neighborhoods)
 
     return (
-        <div>   
-            <div>
-            <h2 className="greet">{this.props.firstName}'s Shed
-                </h2>
-            </div>
-        <div className="garagedoor">
-
+        <div>
+        <div id="cloud-circle">   
         </div>
+            <div className="greet">
+                <h2 >{this.props.firstName}'s Shed</h2>
+            </div>
+
         <div className="shed">
             <div className="lists">Here are your Tools
             {this.state.tools.map(tool => (               
@@ -86,10 +85,13 @@ render(){console.log(this.state.neighborhoods)
               </Link>
            )
         )}
+        </div>        
         </div>
-        </div>
+<div className="garagedoor">
 
-            <div className="create">
+        </div>
+        <div className="create">
+        <div className="createLocalHood">
 
             <form className ="addTool" onSubmit={this.props.addTool}>
                 Tool Name: <input type="text" 
@@ -113,9 +115,11 @@ render(){console.log(this.state.neighborhoods)
                  
             </form>
             <br></br>
+            </div>
             <div  className="createLocalhood">
 
             <form onSubmit={this.props.addHood} >
+
             Create Neighborhood
             <br></br>
             <input
@@ -138,6 +142,8 @@ render(){console.log(this.state.neighborhoods)
             <input type='submit' value='Create Neighborhood' />
             </form> 
             <br></br>
+            </div>
+            <div  className="createLocalhood">
             <form  onSubmit={this.joinHood} >
             Join Neighborhood
             <br></br>
@@ -161,6 +167,7 @@ render(){console.log(this.state.neighborhoods)
             <input type='submit' value='Join Neighborhood' />
             
             </form> 
+            
             </div>
             </div>
            
