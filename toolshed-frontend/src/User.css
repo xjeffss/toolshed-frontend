@@ -32,7 +32,21 @@ h2 {
     animation-timing-function:linear;
     
   }
-
+  #cloud-circle2 {
+    width: 80vw;
+    height: 30vh;
+    margin-top: -60vh;
+    border-radius: 50%;
+    filter: url(#filter);
+    box-shadow: 40vw 40vh 6vw 0vw #fff; /* Increase shadow offset */
+    position: absolute; /* Take the parent out of the document flow */
+    margin-left: 0vw;
+    animation-name: slideLeft;
+    animation-duration: 20s;
+    animation-iteration-count: infinite;
+    animation-timing-function:linear;
+    
+  }
   @keyframes slideLeft{
     from{
         margin-left: -150vw;

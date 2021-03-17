@@ -67,6 +67,8 @@ render(){console.log(this.state.neighborhoods)
         <div>
         <div id="cloud-circle">   
         </div>
+        <div id="cloud-circle2">   
+        </div>
             <div className="greet">
                 <h2 >{this.props.firstName}'s Shed</h2>
             </div>
