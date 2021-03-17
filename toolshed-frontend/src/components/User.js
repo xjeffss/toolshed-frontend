@@ -69,6 +69,9 @@ render(){console.log(this.state.neighborhoods)
             <h2 className="greet">{this.props.firstName}'s Shed
                 </h2>
             </div>
+        <div className="garagedoor">
+
+        </div>
         <div className="shed">
             <div className="lists">Here are your Tools
             {this.state.tools.map(tool => (               
@@ -77,11 +80,12 @@ render(){console.log(this.state.neighborhoods)
         )}</div>
             <div className="lists">Here are your Neighborhoods
             {this.state.neighborhoods.map(neighborhood => (               
-            //   <Link to={`/neighborhood/${neighborhood.id}`}>
+              <Link to={`/neighborhood/${neighborhood.Neighborhood.id}`}>
                   <li> {neighborhood.Neighborhood.neighborhoodName}</li>
-            //   </Link>
+              </Link>
            )
-        )}</div>
+        )}
+        </div>
         </div>
 
             <div className="create">

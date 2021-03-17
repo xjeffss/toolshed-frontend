@@ -1,16 +1,43 @@
 .greet {
+    text-align: justify;
+    position: absolute;
+    margin-top: -4vh;
+    margin-left: 9vw;
+    width: 0; 
+    height: 0; 
+    border-left: 40vw solid transparent;
+    border-right: 40vw solid transparent;
+    border-bottom: 40vw solid rgb(95, 48, 14);
     text-align: center;
     align-items: center;
+    
 }
-
+.garagedoor  {
+    background: darkblue;
+    margin-top: 40vh;
+    position: absolute;
+    width: 70vw;
+    height: 60vw;
+    margin-left: 14vw;
+    -webkit-transition: background-position 0.6s ease;
+    -moz-transition: background-position 0.6s ease;
+    -ms-transition: background-position 0.6s ease;
+    -o-transition: background-position 0.6s ease;
+    transition: background-position 0.6s ease;
+  }
+  
+  .garagedoor :hover {
+    background-position: 0 -100px !important;
+  }
 .shed {
-    position: relative;
-    margin-left: 10vw;
+    margin-top: 40vh;
+    position: absolute;
     background: gray;
+    margin-left: 10vw;
     width: 70vw;
     height: 60vh;
     border: rgb(95, 48, 14) solid ;
-    border-width: 20px 20px 0px 20px;
+    border-width: 4vw 4vw 0px 4vw;
 }
 .lists {
     font-size: 3vw;
@@ -27,7 +54,7 @@
     align-content: space-between;
     font-size: 2.5vw;
     width: 100vw;
-    margin-bottom: 0px;
+    margin-top: 100vh;
 
     padding: 10px;
 }
@@ -43,19 +70,4 @@
 
 
 
-#garagedoor li {
-    background: darkblue;
-    width: 70vw;
-    height: 60vw;
-    display: block;
-    float:left;
-    -webkit-transition: background-position 0.6s ease;
-    -moz-transition: background-position 0.6s ease;
-    -ms-transition: background-position 0.6s ease;
-    -o-transition: background-position 0.6s ease;
-    transition: background-position 0.6s ease;
-  }
-  
-  #garagedoor li:hover {
-    background-position: 0 -100px !important;
-  }
+

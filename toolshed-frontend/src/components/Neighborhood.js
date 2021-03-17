@@ -6,7 +6,9 @@ import axios from 'axios';
 class Neighborhood extends Component{
     constructor(props){  
         super(props);
-
+        this.state ={
+            tools: [],
+        }
     }
 
 componentDidMount= async () =>{
@@ -43,6 +45,10 @@ return newUsers
     return(
         <div>
             A beautiful day in the neighborhood
+            {this.state.tools.map(tool => (               
+              <li> {tool.toolName}</li>
+           )
+        )}
         </div>
 
     )
