@@ -1,22 +1,13 @@
 .greet {
+    font-size: 5vh;
+    color:rgb(235, 133, 74);
 
-    margin: 2vw;
-    position: absolute;
-    margin-top: -10vh;
-    margin-left: 9vw;
-    width: 0vw; 
-    height: 0vh; 
-    border-left: 40vw solid transparent;
-    border-right: 40vw solid transparent;
-    border-bottom: 20vw solid rgb(66, 34, 11);
-}
-h2 {
+    margin-top: 2vh;
+    text-align: center;
 
-    margin-top: 10vh;
-    margin-left: 80vw;
-    font-size: 6vh;
-    color:lemonchiffon;
+
 }
+
 #cloud-circle {
     width: 80vw;
     height: 30vh;
@@ -70,20 +61,21 @@ h2 {
 
 .garagedoor  {
     background-image: url(https://www.pdbuchan.com/aquabutton/step5.jpg);
-    margin-top: 3vh;
+    margin-top: 11vh;
     position: absolute;
     width: 70vw;
     height: 0vh;
     margin-left: 14vw;
     animation-name: slideOutUp;
-    animation-duration: 2s ;
+    animation-duration: 3s ;
     animation-timing-function:linear;
+
     
   }
 
   @keyframes slideOutUp{
     from{
-        height: 60vh;
+        height: 70vh;
       }
     
     to {
@@ -96,15 +88,15 @@ h2 {
      !important;
   } */
 .shed {
-    margin-top: -1vh;
+    margin-top: -3vh;
     position: absolute;
     background: gray;
     margin-left: 10vw;
     width: 70vw;
-    height: 60vh;
+    height: 62vh;
     border: rgb(66, 34, 11) solid ;
-    border-width: 4vw 4vw 0px 4vw;
-    
+    border-width: 10vw 4vw 0px 4vw;
+
 }
 .lists {
     font-size: 3vw;
@@ -121,7 +113,7 @@ h2 {
     align-content: space-around;
     font-size: 2.5vw;
     width: 100vw;
-    margin-top: 63vh;
+    margin-top: 72vh;
     
 }
 
