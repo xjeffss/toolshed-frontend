@@ -70,9 +70,9 @@ render(){console.log(this.state.neighborhoods)
         <div id="cloud-circle2">   
         </div>
             <div className="greet">
-                <h2 >{this.props.firstName}'s Shed</h2>
+                
             </div>
-
+            <h2 >{this.props.firstName}'s Shed</h2>
         <div className="shed">
             <div className="lists">Here are your Tools
             {this.state.tools.map(tool => (               

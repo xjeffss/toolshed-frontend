@@ -2,19 +2,19 @@
 
     margin: 2vw;
     position: absolute;
-    margin-top: 12vh;
+    margin-top: -10vh;
     margin-left: 9vw;
-    width: 0; 
-    height: 0; 
+    width: 0vw; 
+    height: 0vh; 
     border-left: 40vw solid transparent;
     border-right: 40vw solid transparent;
-    border-bottom: 20vw solid rgb(95, 48, 14);
+    border-bottom: 20vw solid rgb(66, 34, 11);
 }
 h2 {
-    display: block;
-    margin-top: 10vh;
 
-    font-size: 4vh;
+    margin-top: 10vh;
+    margin-left: 80vw;
+    font-size: 6vh;
     color:lemonchiffon;
 }
 #cloud-circle {
@@ -25,9 +25,9 @@ h2 {
     filter: url(#filter);
     box-shadow: 40vw 40vh 6vw 0vw #fff; /* Increase shadow offset */
     position: absolute; /* Take the parent out of the document flow */
-    margin-left: -150vw;
+
     animation-name: slideLeft;
-    animation-duration: 20s;
+    animation-duration:35s;
     animation-iteration-count: infinite;
     animation-timing-function:linear;
     
@@ -35,32 +35,42 @@ h2 {
   #cloud-circle2 {
     width: 80vw;
     height: 30vh;
-    margin-top: -60vh;
+    margin-top: -20vh;
     border-radius: 50%;
     filter: url(#filter);
     box-shadow: 40vw 40vh 6vw 0vw #fff; /* Increase shadow offset */
     position: absolute; /* Take the parent out of the document flow */
-    margin-left: 0vw;
-    animation-name: slideLeft;
-    animation-duration: 20s;
+    margin-left: 75vw;
+    animation-name: slideLeft2;
+    animation-duration: 30s;
     animation-iteration-count: infinite;
     animation-timing-function:linear;
     
   }
   @keyframes slideLeft{
     from{
-        margin-left: -150vw;
+        margin-left: -200vw;
       }
     
     to {
-        margin-left: 100vw;
+        margin-left: 90vw;
+      
+      }
+  }
+  @keyframes slideLeft2{
+    from{
+        margin-left: -120vw;
+      }
+    
+    to {
+        margin-left: 70vw;
       
       }
   }
 
 .garagedoor  {
-    background: rgb(49, 49, 63);
-    margin-top: 45vh;
+    background-image: url(https://www.pdbuchan.com/aquabutton/step5.jpg);
+    margin-top: 3vh;
     position: absolute;
     width: 70vw;
     height: 0vh;
@@ -86,13 +96,13 @@ h2 {
      !important;
   } */
 .shed {
-    margin-top: 40vh;
+    margin-top: -1vh;
     position: absolute;
     background: gray;
     margin-left: 10vw;
     width: 70vw;
     height: 60vh;
-    border: rgb(95, 48, 14) solid ;
+    border: rgb(66, 34, 11) solid ;
     border-width: 4vw 4vw 0px 4vw;
     
 }
@@ -111,7 +121,7 @@ h2 {
     align-content: space-around;
     font-size: 2.5vw;
     width: 100vw;
-    margin-top: 100vh;
+    margin-top: 63vh;
     
 }
 
