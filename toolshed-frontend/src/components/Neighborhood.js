@@ -27,12 +27,12 @@ getNeighbors = async () => {
     console.log(this.props.neighborhoodId)
     const response = await axios.get(`http://localhost:3001/neighborhood/${this.props.neighborhoodId}`)
     console.log(response.data)
-return response
+return response.data
 }
 getHoodTools = async (users)=> {
     console.log(users)
-    const newUsers = users.map(async(user) => {
-    
+    const newUsers = this.state.users.map(async(user) => {
+    console.log(user)
     const data = {
         id: user.userId
       };

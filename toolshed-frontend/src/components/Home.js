@@ -16,9 +16,9 @@ class Home extends Component {
 render(){
     return(
         <div >
-           <h3 className ="signup">Please fill in the information below to Register</h3>
+           <h3 >Please fill in the information below to Register</h3>
            <br></br>
-           
+           <div className="homepage">
             <form className ="signup" onSubmit={(e) => this.props.signup(e, this.state)}>
                 Name: <input type="text" 
                 name="firstName" 
@@ -49,8 +49,10 @@ render(){
                 
                
             </form>
+            </div>
             <br></br>
-        
+            <h3> Already a Member?  Log in HERE</h3>
+             <br></br>
             <form className="login" onSubmit={(e) => this.props.login(e, this.state)}>
             
             <input
@@ -69,6 +71,7 @@ render(){
             /> 
             <input type='submit'  value='Login' />
             </form> 
+       
         </div>
     )
 }

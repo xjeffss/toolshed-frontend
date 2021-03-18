@@ -15,8 +15,8 @@
     border-radius: 50%;
     filter: url(#filter);
     box-shadow: 40vw 40vh 6vw 0vw #fff; /* Increase shadow offset */
-    position: absolute; /* Take the parent out of the document flow */
-
+    position: relative; /* Take the parent out of the document flow */
+    z-index: -1;
     animation-name: slideLeft;
     animation-duration:35s;
     animation-iteration-count: infinite;
@@ -30,8 +30,9 @@
     border-radius: 50%;
     filter: url(#filter);
     box-shadow: 40vw 40vh 6vw 0vw #fff; /* Increase shadow offset */
-    position: absolute; /* Take the parent out of the document flow */
+    position: relative; /* Take the parent out of the document flow */
     margin-left: 75vw;
+    z-index: -1;
     animation-name: slideLeft2;
     animation-duration: 30s;
     animation-iteration-count: infinite;
@@ -61,7 +62,7 @@
 
 .garagedoor  {
     background-image: url(https://www.pdbuchan.com/aquabutton/step5.jpg);
-    margin-top: 11vh;
+    margin-top: -62vh;
     position: absolute;
     width: 70vw;
     height: 0vh;
@@ -89,13 +90,14 @@
   } */
 .shed {
     margin-top: -3vh;
-    position: absolute;
+
     background: gray;
     margin-left: 10vw;
     width: 70vw;
     height: 62vh;
     border: rgb(66, 34, 11) solid ;
     border-width: 10vw 4vw 0px 4vw;
+    border-radius: 5% 5% 0% 0%;
 
 }
 .lists {
@@ -106,14 +108,15 @@
 }
 .create {
     background: green;
-    position: absolute;
+display: flex;
     text-align: center;
-    display: inline-flex;
+    position: absolute;
     align-items: center;
     align-content: space-around;
     font-size: 2.5vw;
     width: 100vw;
-    margin-top: 72vh;
+    height:27vh;
+    margin-bottom: 0vh;
     
 }
 

@@ -53,9 +53,9 @@ class App extends Component {
     localStorage.setItem("username", data.username)
     localStorage.setItem("password", data.password)
     this.setState({
-      firstName: response.data.firstName,
-      lastName: response.data.lastName,  
-      id: response.data.id
+      firstName: response.data.user.firstName,
+      lastName: response.data.user.lastName,  
+      id: response.data.user.id
     }
     );
     this.props.history.push(`/user/${this.state.id}`)
