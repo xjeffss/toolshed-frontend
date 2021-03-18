@@ -12,6 +12,9 @@ class User extends Component {
             id: this.props.id,
             neighborhoodName: this.props.neighborhoodName,
             neighborhoodPasscode: this.props.neighborhoodPasscode,
+            neighborhoodId: this.props.neighborhoodId,
+            joinNeighborhoodName: this.props.neighborhoodName,
+            joinNeighborhoodPasscode: this.props.neighborhoodPasscode,
             toolName: "",
             userId: null,
             tools: [],
@@ -30,8 +33,8 @@ getTools = async () => {
         id: this.props.id
       };
       console.log(data)
-    const userResponse = await axios.post('http://localhost:3001/user/gettools', data);
-    const hoodResponse = await axios.post('http://localhost:3001/user/gethood', data);
+    const userResponse = await axios.post('http://localhost:3001/user/gettools'  || 'https://neighborhood-toolshed.herokuapp.com/user/gettools', data);
+    const hoodResponse = await axios.post('http://localhost:3001/user/gethood'  || 'https://neighborhood-toolshed.herokuapp.com/gethood', data);
     console.log(userResponse)
     this.setState ({
         tools: userResponse.data, 
@@ -48,11 +51,29 @@ deleteTool = async (e) => {
       toolName: this.state.toolName
   };
     console.log(data);
-    const response = await axios.post('http://localhost:3001/user/deletetool', data);
+    const response = await axios.post('http://localhost:3001/user/deletetool'  || 'https://neighborhood-toolshed.herokuapp.com/user/deletetool', data);
     console.log(response);
     // window.location.reload()
   };
-
+  leaveHoodOnChange = (e) => {
+    e.preventDefault();
+    this.setState({
+      [e.target.name]: e.target.value,
+    });
+  };
+  leaveHood = async (e, neighborhood) => {
+    e.preventDefault();
+    console.log(neighborhood)
+    const data = {
+      neighborhoodId:neighborhood.Neighborhood.id,
+      neighborhoodName: neighborhood.Neighborhood.neighborhoodName,
+      userId: this.state.id
+  };
+    console.log(data);
+    const response = await axios.post('http://localhost:3001/neighborhood/leavehood'  || 'https://neighborhood-toolshed.herokuapp.com/neighborhood/leavehood', data);
+    console.log(response);
+    // window.location.reload()
+  };
 joinHood = async (e) => {
     e.preventDefault();
     const data = {
@@ -61,7 +82,7 @@ joinHood = async (e) => {
       userId: this.state.id,    
   };
     console.log(data);
-    const response = await axios.post('http://localhost:3001/neighborhood/joinhood', data);
+    const response = await axios.post('http://localhost:3001/neighborhood/joinhood'  || 'https://neighborhood-toolshed.herokuapp.com/neighborhood/joinhood', data);
     console.log(response);
     this.setState ({
         neighborhoods:response
@@ -73,7 +94,23 @@ joinHoodOnChange = (e) => {
       [e.target.name]: e.target.value,
     });
   };
-
+  addHoodOnChange = (e) => {
+    e.preventDefault();
+    this.setState({
+      [e.target.name]: e.target.value,
+    });
+  };
+  addHood = async (e) => {
+      e.preventDefault();
+      const data = {
+        neighborhoodName: this.state.neighborhoodName,
+        neighborhoodPasscode: this.state.neighborhoodPasscode
+    };
+      console.log(data);
+      const response = await axios.post('http://localhost:3001/neighborhood/addhood'  || 'https://neighborhood-toolshed.herokuapp.com/neighborhood/addhood', data);
+      console.log(response);
+      // window.location.reload()
+  };
 render(){console.log(this.state.neighborhoods)
 
     return (
@@ -96,9 +133,10 @@ render(){console.log(this.state.neighborhoods)
         )}</div>
             <div className="list2">Your Neighborhoods
             {this.state.neighborhoods.map(neighborhood => (               
-              <Link to={`/neighborhood/${neighborhood.Neighborhood.id}`}>
-                  <li className="neighborhoods"> {neighborhood.Neighborhood.neighborhoodName}<form onSubmit={this.leaveHood}><input className="toolButton" name="neighborhoodName" type="submit" value="Leave"></input></form></li>
-              </Link>
+              
+                  <li className="neighborhoods"><Link to={`/neighborhood/${neighborhood.Neighborhood.id}`}> {neighborhood.Neighborhood.neighborhoodName}</Link>
+                  <form onSubmit={(e)=>this.leaveHood(e, neighborhood)}><input className="toolButton" name="neighborhoodId" type="submit" value="Leave"></input></form></li>
+              
            )
         )}
         </div>   </div>     
@@ -134,7 +172,7 @@ render(){console.log(this.state.neighborhoods)
             </div>
             <div  className="createLocalhood">
 
-            <form onSubmit={this.props.addHood} >
+            <form onSubmit={this.addHood} >
 
             Create Neighborhood
             <br></br>
@@ -143,7 +181,7 @@ render(){console.log(this.state.neighborhoods)
                 type='text'
                 placeholder='neighborhood'
                 value={this.state.neighborhoodName}
-                onChange={this.props.addHoodOnChange}
+                onChange={this.addHoodOnChange}
             />
             <br></br>
             <input
@@ -151,7 +189,7 @@ render(){console.log(this.state.neighborhoods)
                 text= 'text'
                 placeholder= 'passcode'
                 value={this.state.neighborhoodPasscode}
-                onChange={this.props.addHoodOnChange}               
+                onChange={this.addHoodOnChange}               
             >
             </input>
             <br></br>
@@ -164,18 +202,18 @@ render(){console.log(this.state.neighborhoods)
             Join Neighborhood
             <br></br>
             <input
-                name='neighborhoodName'
+                name='joinNeighborhoodName'
                 type='text'
                 placeholder='neighborhood'
-                value={this.state.neighborhoodName}
+                value={this.state.joinNeighborhoodName}
                 onChange={this.joinHoodOnChange}
             />
             <br></br>
             <input
-                name= 'neighborhoodPasscode'
+                name= 'joinNeighborhoodPasscode'
                 text= 'text'
                 placeholder= 'passcode'
-                value={this.state.neighborhoodPasscode}
+                value={this.state.joinNeighborhoodPasscode}
                 onChange={this.joinHoodOnChange}               
             >
             </input>

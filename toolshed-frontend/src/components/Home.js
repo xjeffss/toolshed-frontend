@@ -56,17 +56,17 @@ render(){
             <form className="login" onSubmit={(e) => this.props.login(e, this.state)}>
             
             <input
-                name='username'
+                name='loginUsername'
                 type='text'
                 placeholder='username'
-                value={this.props.username}
+                value={this.props.loginUsername}
                 onChange={this.props.loginOnChange}
             />
             <input
-                name='password'
+                name='loginPassword'
                 type='password'
                 placeholder='password'
-                value={this.props.password}
+                value={this.props.loginPassword}
                 onChange={this.props.loginOnChange}
             /> 
             <input type='submit'  value='Login' />

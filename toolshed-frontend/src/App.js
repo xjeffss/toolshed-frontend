@@ -16,6 +16,8 @@ class App extends Component {
       lastName: '',
       username: '',
       password: '',
+      loginUsername: '',
+      loginPassword: '',
       email: '',
       id: null,
       toolName: '',
@@ -24,6 +26,7 @@ class App extends Component {
       details: '',
       neighborhoodName: '',
       neighborhoodPasscode: '',
+      neighborhoodId:'',
       userId: null
     };
   }
@@ -42,8 +45,8 @@ class App extends Component {
   login = async (e) => {
     e.preventDefault();
     const data = {
-      username: this.state.username,
-      password: this.state.password,
+      username: this.state.loginUsername,
+      password: this.state.loginPassword,
       id: this.state.id
     };
     console.log(data);
@@ -76,7 +79,7 @@ class App extends Component {
       email: this.state.email
     };
     console.log(data);
-    const response = await axios.post('http://localhost:3001/auth/signup', data);
+    const response = await axios.post('http://localhost:3001/auth/signup'  || 'https://neighborhood-toolshed.herokuapp.com/auth/signup', data);
     console.log(response);
     this.setState({
       firstName: response.data.firstName,
@@ -101,7 +104,7 @@ addTool = async (e) => {
       userId: this.state.id
   };
     console.log(data);
-    const response = await axios.post('http://localhost:3001/user/addtool', data);
+    const response = await axios.post('http://localhost:3001/user/addtool' || 'https://neighborhood-toolshed.herokuapp.com/user/addtool',  data);
     console.log(response);
     window.location.reload()
 };
@@ -119,9 +122,9 @@ addHood = async (e) => {
       neighborhoodPasscode: this.state.neighborhoodPasscode
   };
     console.log(data);
-    const response = await axios.post('http://localhost:3001/neighborhood/addhood', data);
+    const response = await axios.post('http://localhost:3001/neighborhood/addhood'  || 'https://neighborhood-toolshed.herokuapp.com/neighborhood/addhood', data);
     console.log(response);
-    window.location.reload()
+    // window.location.reload()
 };
 
   render(){   
@@ -154,6 +157,7 @@ addHood = async (e) => {
             firstName = {this.state.firstName}
             lastName = {this.state.lastName}
             neighborhoodId= {routerProps.match.params.id} 
+            neighborhoodName= {this.state.neighborhoodName}
 
           />)}
           />

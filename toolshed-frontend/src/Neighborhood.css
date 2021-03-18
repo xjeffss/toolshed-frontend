@@ -1,7 +1,9 @@
-main {
+.main {
     display: block;
     align-content: center; 
     margin: 5%;
     border:rgb(30, 127, 184) solid 5px;
-    padding: 5%
+    padding: 5%;
+    color:lemonchiffon;
+    font-size: 10vw;
 }
