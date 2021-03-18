@@ -15,7 +15,7 @@ class Home extends Component {
 }
 render(){
     return(
-        <div >
+        <div className="main">
            <h3 >Please fill in the information below to Register</h3>
            <br></br>
            <div className="homepage">
@@ -71,6 +71,70 @@ render(){
             /> 
             <input type='submit'  value='Login' />
             </form> 
+            <div class="house-wrap">
+		<div class="blue-block"></div>
+		<div class="roof">	
+			<div class="slant left">
+				<div class="slant-shadow"></div>
+			</div>
+			<div class="slant right"></div>
+			<div class="chimney"></div>
+			<div class="smoke"></div>
+			<div class="smoke two"></div>
+			<div class="smoke three"></div>
+			<div class="smoke four"></div>
+			<div class="smoke five"></div>
+			<div class="smoke six"></div>
+			<div class="smoke seven"></div>
+			<div class="smoke eight"></div>
+			<div class="smoke nine"></div>
+		</div>
+		<div class="window circle-window"></div>
+		<div class="window left">
+			<div class="window-frame top"></div>
+			<div class="window-frame bottom"></div>
+			<div class="window-frame left"></div>
+			<div class="window-frame right"></div>
+			<div class="window-frame mullion"></div>
+			<div class="window-shadow"></div>
+			<div class="window-shadow vert"></div>
+		</div>
+		<div class="window right">
+			<div class="window-frame top"></div>
+			<div class="window-frame bottom"></div>
+			<div class="window-frame left"></div>
+			<div class="window-frame right"></div>
+			<div class="window-frame mullion"></div>
+			<div class="window-shadow"></div>
+			<div class="window-shadow vert"></div>
+		</div>
+		<div class="window left bottom">
+			<div class="window-frame top"></div>
+			<div class="window-frame bottom"></div>
+			<div class="window-frame left"></div>
+			<div class="window-frame right"></div>
+			<div class="window-frame mullion"></div>
+			<div class="window-shadow"></div>
+			<div class="window-shadow vert"></div>
+		</div>
+		<div class="window right bottom">
+			<div class="window-frame top"></div>
+			<div class="window-frame bottom"></div>
+			<div class="window-frame left"></div>
+			<div class="window-frame right"></div>
+			<div class="window-frame mullion"></div>
+			<div class="window-shadow"></div>
+			<div class="window-shadow vert"></div>
+		</div>
+		<div class="door">
+			<div class="panel top"></div>
+			<div class="panel bottom"></div>
+			<div class="hinge"></div>
+			<div class="hinge bottom"></div>
+			<div class="handle"></div>
+			<div class="door-shadow"></div>
+		</div>
+	</div>
        
         </div>
     )

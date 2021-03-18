@@ -40,6 +40,19 @@ getTools = async () => {
     )
 }
 
+deleteTool = async (e) => {
+    e.preventDefault();
+    console.log("delete")
+    const data = {
+      toolId:this.state.id,
+      toolName: this.state.toolName
+  };
+    console.log(data);
+    const response = await axios.post('http://localhost:3001/user/deletetool', data);
+    console.log(response);
+    // window.location.reload()
+  };
+
 joinHood = async (e) => {
     e.preventDefault();
     const data = {
@@ -74,26 +87,27 @@ render(){console.log(this.state.neighborhoods)
             </div>
            
         <div className="shed">
-            <div className="lists">Here are your Tools
+            <div className="lists">
+            <div className="list1">Your Tools
             {this.state.tools.map(tool => (               
-              <li> {tool.toolName}<button onSubmit={this.deleteTools}>Delete Tool</button>
+              <li className="tools"> {tool.toolName}<form onSubmit={this.deleteTool}><input className="toolButton" name="toolName" type="submit" value="Delete Tool"></input></form>
               </li>
            )
         )}</div>
-            <div className="lists">Here are your Neighborhoods
+            <div className="list2">Your Neighborhoods
             {this.state.neighborhoods.map(neighborhood => (               
               <Link to={`/neighborhood/${neighborhood.Neighborhood.id}`}>
-                  <li> {neighborhood.Neighborhood.neighborhoodName}<button onSubmit={this.leaveHood}>Leave Neighborhood</button></li>
+                  <li className="neighborhoods"> {neighborhood.Neighborhood.neighborhoodName}<form onSubmit={this.leaveHood}><input className="toolButton" name="neighborhoodName" type="submit" value="Leave"></input></form></li>
               </Link>
            )
         )}
-        </div>        
+        </div>   </div>     
         </div>
 <div className="garagedoor">
 
         </div>
         <div className="create">
-        <div className="createLocalHood">
+        <div className="createLocalhood">
 
             <form className ="addTool" onSubmit={this.props.addTool}>
                 Tool Name: <input type="text" 

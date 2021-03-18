@@ -9,19 +9,475 @@ body {
 }
 .homepage{
     display: flex;
-    text-align: center;
+   
     align-items: center;
     align-content: space-around;
 }
 login {
-
+    display: inline;
+   
+    align-items: right;
+    align-content: space-around;
     font-family: monospace;
     font-size: 14pt; 
 }
-main {
+.main {
     display: block;
     align-content: center; 
     margin: 5%;
     border:rgb(30, 127, 184) solid 5px;
     padding: 5%
 }
+/* from Charles Bisbee on CodePen */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  *::before, *::after {
+    content: "";
+    display: block;
+    position: absolute;
+  }
+  
+  body {
+    background-color: steelblue;
+  }
+  body .house-wrap {
+    background-color: #efdd6f;
+    width: 380px;
+    height: 425px;
+    margin: -5em 6em 0em 26em ;
+    position: relative;
+    border: 3px solid #333;
+  }
+  body .house-wrap::before, body .house-wrap::after {
+    width: 200px;
+    height: 38px;
+    top: 55px;
+    left: 20px;
+    transform: rotate(-33deg);
+    background: #a79a4d;
+    filter: blur(2px);
+  }
+  body .house-wrap::after {
+    left: auto;
+    height: 38px;
+    right: -53px;
+    transform: rotate(45deg);
+    top: 84px;
+    width: 283px;
+  }
+  body .house-wrap .blue-block {
+    background-color: steelblue;
+    position: absolute;
+    width: 25px;
+    height: 34px;
+    z-index: 1;
+    right: -25px;
+    top: 183px;
+    border-left: 3px solid #333;
+  }
+  body .house-wrap .roof {
+    height: 30px;
+    position: absolute;
+    top: 70px;
+    width: 100%;
+  }
+  body .house-wrap .roof::before, body .house-wrap .roof::after {
+    background-color: steelblue;
+    width: 251px;
+    height: 128px;
+    transform: rotate(-45deg);
+    top: -93px;
+    left: -94px;
+  }
+  body .house-wrap .roof::after {
+    left: auto;
+    right: -94px;
+    transform: rotate(45deg);
+  }
+  body .house-wrap .roof .slant {
+    position: absolute;
+    z-index: 2;
+    top: 0;
+    left: -59px;
+    width: 300px;
+    height: 100%;
+    transform: rotate(-45deg);
+    background-color: #8b0000;
+    border: 3px solid #333;
+  }
+  body .house-wrap .roof .slant.left .slant-shadow {
+    background-color: #b60004;
+    width: 100px;
+    height: 20px;
+    position: absolute;
+    width: 215px;
+    height: 14px;
+    left: 22px;
+    border-radius: 0 0px 75% 75%;
+  }
+  body .house-wrap .roof .slant.left .slant-shadow::before, body .house-wrap .roof .slant.left .slant-shadow::after {
+    background: #b60004;
+    top: 0;
+    width: 42px;
+    height: 11px;
+    left: -9px;
+    border-radius: 0 0 0 93%;
+  }
+  body .house-wrap .roof .slant.left .slant-shadow::after {
+    left: auto;
+    right: -20px;
+    background: #b60004;
+    border-radius: 0 0 93% 0;
+    width: 60px;
+    top: 0px;
+  }
+  body .house-wrap .roof .slant.right {
+    transform: rotate(45deg);
+    left: auto;
+    right: -59px;
+  }
+  body .house-wrap .roof .slant.right::before {
+    background: #8b0000;
+    top: 0;
+    width: 24px;
+    height: 36px;
+    left: -1px;
+  }
+  body .house-wrap .roof .chimney {
+    background-color: #777;
+    height: 100px;
+    width: 40px;
+    position: absolute;
+    right: 78px;
+    top: -91px;
+    z-index: 1;
+    border: 3px solid #333;
+  }
+  body .house-wrap .roof .chimney::before, body .house-wrap .roof .chimney::after {
+    width: 55px;
+    height: 18px;
+    z-index: 2;
+    background-color: #777;
+    top: -10px;
+    left: -13px;
+    border: 3px solid #333;
+  }
+  body .house-wrap .roof .chimney::after {
+    top: 0;
+    border: none;
+    background-color: #666;
+    filter: blur(2px);
+    width: 34px;
+    left: 0;
+    z-index: 1;
+    top: 11px;
+    transform: skewY(10deg);
+  }
+  body .house-wrap .roof .smoke {
+    background-color: #999;
+    opacity: 0.5;
+    filter: blur(7px);
+    height: 70px;
+    width: 60px;
+    position: absolute;
+    right: 71px;
+    top: -150px;
+    z-index: 2;
+    border-radius: 40%;
+    -webkit-animation: ani1 4s cubic-bezier(0.49, 0, 0.41, 0.99) infinite;
+    /* Safari 4.0 - 8.0 */
+    animation: ani1 4s cubic-bezier(0.49, 0, 0.41, 0.99) infinite;
+  }
+  @keyframes ani1 {
+    from {
+      top: -150px;
+    }
+    to {
+      top: -450px;
+    }
+  }
+  body .house-wrap .roof .smoke.two {
+    top: -170px;
+    -webkit-animation: ani2 5s cubic-bezier(0.49, 0, 0.41, 0.99) infinite;
+    /* Safari 4.0 - 8.0 */
+    animation: ani2 5s cubic-bezier(0.49, 0, 0.41, 0.99) infinite;
+  }
+  @keyframes ani2 {
+    from {
+      top: -170px;
+    }
+    to {
+      top: -400px;
+    }
+  }
+  body .house-wrap .roof .smoke.three {
+    top: -190px;
+    background: #666;
+    -webkit-animation: ani2 2s linear infinite;
+    /* Safari 4.0 - 8.0 */
+    animation: ani3 2s linear infinite;
+  }
+  @keyframes ani3 {
+    from {
+      top: -190px;
+    }
+    to {
+      top: -380px;
+    }
+  }
+  body .house-wrap .roof .smoke.four {
+    background-color: rgba(255, 255, 255, 0.3);
+    top: -200px;
+    width: 80px;
+    background-color: #ccc;
+    -webkit-animation: ani2 6s cubic-bezier(0.49, 0, 0.41, 0.99) infinite;
+    /* Safari 4.0 - 8.0 */
+    animation: ani4 6s cubic-bezier(0.49, 0, 0.41, 0.99) infinite;
+  }
+  @keyframes ani4 {
+    from {
+      top: -200px;
+    }
+    to {
+      top: -400px;
+    }
+  }
+  body .house-wrap .roof .smoke.five {
+    background-color: rgba(255, 255, 255, 0.3);
+    top: -160px;
+    width: 50px;
+    -webkit-animation: ani2 3s cubic-bezier(0.49, 0, 0.41, 0.99) infinite;
+    /* Safari 4.0 - 8.0 */
+    animation: ani5 3s cubic-bezier(0.49, 0, 0.41, 0.99) infinite;
+  }
+  @keyframes ani5 {
+    from {
+      top: -160px;
+    }
+    to {
+      top: -300px;
+    }
+  }
+  body .house-wrap .roof .smoke.six {
+    background-color: #ccc;
+    opacity: 0.3;
+    width: 70px;
+    top: -180px;
+    -webkit-animation: ani2 7s cubic-bezier(0.49, 0, 0.41, 0.99) infinite;
+    /* Safari 4.0 - 8.0 */
+    animation: ani6 7s cubic-bezier(0.49, 0, 0.41, 0.99) infinite;
+  }
+  @keyframes ani6 {
+    from {
+      top: -180px;
+    }
+    to {
+      top: -400px;
+    }
+  }
+  body .house-wrap .roof .smoke.seven {
+    background-color: #eee;
+    opacity: 0.3;
+    width: 90px;
+    top: -190px;
+    -webkit-animation: ani2 4s ease-in-out infinite;
+    /* Safari 4.0 - 8.0 */
+    animation: ani7 4s ease-in-out infinite;
+  }
+  @keyframes ani7 {
+    from {
+      top: -190px;
+    }
+    to {
+      top: -400px;
+    }
+  }
+  body .house-wrap .roof .smoke.eight {
+    background-color: #aaa;
+    background-color: red;
+    opacity: 0.1;
+    width: 100px;
+    top: -200px;
+    -webkit-animation: ani2 4s ease-in-out infinite;
+    /* Safari 4.0 - 8.0 */
+    animation: ani8 4s ease-in-out infinite;
+  }
+  @keyframes ani8 {
+    from {
+      top: -200px;
+    }
+    to {
+      top: -400px;
+    }
+  }
+  body .house-wrap .roof .smoke.nine {
+    background-color: #eee;
+    opacity: 0.3;
+    width: 90px;
+    top: -140px;
+    -webkit-animation: ani2 6s ease-in-out infinite;
+    /* Safari 4.0 - 8.0 */
+    animation: ani9 6s ease-in-out infinite;
+  }
+  @keyframes ani9 {
+    from {
+      top: -140px;
+    }
+    to {
+      top: -400px;
+    }
+  }
+  body .house-wrap .window {
+    height: 75px;
+    width: 90px;
+    background-color: lightblue;
+    position: absolute;
+    top: 175px;
+    left: 40px;
+  }
+  body .house-wrap .window .window-shadow {
+    background-color: #a79a4d;
+    height: 10px;
+    width: 92px;
+    position: absolute;
+    bottom: -3px;
+    left: 5px;
+    filter: blur(2px);
+    transform: skewY(3deg);
+  }
+  body .house-wrap .window .window-shadow.vert {
+    background: #a79a4d;
+    width: 8px;
+    height: 77px;
+    left: auto;
+    right: -4px;
+    filter: blur(2px);
+    transform: skewX(5deg);
+  }
+  body .house-wrap .window.bottom {
+    top: 280px;
+  }
+  body .house-wrap .window::before, body .house-wrap .window::after {
+    background-color: #e6f3f7;
+    width: 10px;
+    height: 56px;
+    filter: blur(3px);
+    left: 19px;
+    top: 10px;
+    transform: skewX(-22deg);
+  }
+  body .house-wrap .window::after {
+    left: auto;
+    right: 21px;
+    height: 55px;
+    transform: skewX(-20deg);
+  }
+  body .house-wrap .window .window-frame {
+    background-color: #966f33;
+    width: 100%;
+    height: 10px;
+    position: absolute;
+    border: 2px solid #333;
+    top: 0;
+    z-index: 1;
+  }
+  body .house-wrap .window .window-frame.bottom {
+    top: auto;
+    bottom: 0;
+  }
+  body .house-wrap .window .window-frame.left, body .house-wrap .window .window-frame.right, body .house-wrap .window .window-frame.mullion {
+    width: 10px;
+    height: 59px;
+    left: 0;
+    top: 8px;
+    border-bottom: none;
+    border-top: none;
+  }
+  body .house-wrap .window .window-frame.right {
+    left: auto;
+    right: 0;
+  }
+  body .house-wrap .window .window-frame.mullion {
+    left: 40px;
+  }
+  body .house-wrap .window.right {
+    left: auto;
+    right: 40px;
+  }
+  body .house-wrap .door {
+    background-color: #7a5230;
+    height: 120px;
+    width: 90px;
+    position: absolute;
+    bottom: 0;
+    left: 142px;
+    border-radius: 50px 50px 0 0;
+    border: 2px solid #333;
+    border-bottom: none;
+  }
+  body .house-wrap .door .handle {
+    background-color: silver;
+    height: 13px;
+    width: 13px;
+    position: absolute;
+    border-radius: 50%;
+    top: 65px;
+    left: 5px;
+    border: 2px solid #333;
+    box-sizing: content-box;
+  }
+  body .house-wrap .door .handle::before {
+    width: 14px;
+    height: 4px;
+    background-color: silver;
+    border-radius: 3px;
+    top: 3px;
+    left: 5px;
+    border: 2px solid #333;
+  }
+  body .house-wrap .door .panel {
+    position: absolute;
+    width: 75px;
+    height: 56px;
+    top: 7px;
+    left: 5.5px;
+    border-radius: 50px 50px 0 0;
+    border: 2px solid #333;
+  }
+  body .house-wrap .door .panel.top {
+    box-shadow: inset -16px 1px 15px #402a18;
+  }
+  body .house-wrap .door .panel.bottom {
+    border-radius: 0;
+    top: auto;
+    bottom: 3px;
+    height: 31px;
+    box-shadow: inset -10px 0px 8px #402a18;
+  }
+  body .house-wrap .door .hinge {
+    background-color: silver;
+    position: absolute;
+    width: 4px;
+    height: 17px;
+    right: -6px;
+    top: 40px;
+    border: 1px solid #333;
+    border-left: none;
+  }
+  body .house-wrap .door .hinge.bottom {
+    top: auto;
+    bottom: 15px;
+  }
+  body .house-wrap .door .door-shadow {
+    background: rgba(9, 9, 9, 0.2);
+    height: 117px;
+    width: 41px;
+    position: absolute;
+    right: -15px;
+    bottom: 0;
+    border-radius: 0 83px 0 0;
+    filter: blur(4px);
+  }
