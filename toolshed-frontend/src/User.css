@@ -1,7 +1,7 @@
 .greet {
-    font-size: 5vh;
+    font-size: 4vh;
     color:rgb(235, 133, 74);
-    margin-top: 2vh;
+    margin-top: -7vh;
     text-align: center;
     position: relative;
 }
@@ -75,11 +75,11 @@
 
 .garagedoor  {
     background-image: url(https://www.pdbuchan.com/aquabutton/step5.jpg);
-    margin-top: -50vh;
+    top:0vw;
     position: absolute;
     width: 70vw;
-    height: 0vh;
-    margin-left: 14vw;
+    height: 0vw;
+
     animation-name: slideOutUp;
     animation-duration: 3s ;
     animation-timing-function:linear;
@@ -89,7 +89,7 @@
 
   @keyframes slideOutUp{
     from{
-        height: 60vh;
+        height: 45vw;
       }
     
     to {
@@ -99,7 +99,8 @@
   }
   
  .shed {
-    margin-top: -3vh;
+    bottom: 27vh;
+    position: absolute;
     font-size: 3vw;
     background: gray;
     margin-left: 10vw;
@@ -134,7 +135,7 @@
     font-size: 2.5vw;
     width: 100vw;
     height:27vh;
-    margin-bottom: 0vh;
+    bottom: 0vh;
     
 }
 

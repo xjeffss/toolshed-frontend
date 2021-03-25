@@ -119,11 +119,12 @@ render(){console.log(this.state.neighborhoods)
         </div>
         <div id="cloud-circle2">   
         </div>
-            <div className="greet">
-                 <h2 >{this.props.firstName}'s Shed</h2>
-            </div>
+
            
         <div className="shed">
+            <div className="greet">
+                {this.props.firstName}'s Shed
+            </div>
             <div className="lists">
             <div className="list1">Your Tools
             {this.state.tools.map(tool => (               
@@ -139,11 +140,11 @@ render(){console.log(this.state.neighborhoods)
               
            )
         )}
-        </div>   </div>     
+        </div> 
+          </div>   
+            <div className="garagedoor"></div>
         </div>
-<div className="garagedoor">
 
-        </div>
         <div className="create">
         <div className="createLocalhood">
 
