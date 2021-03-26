@@ -7,6 +7,7 @@ class Neighborhood extends Component{
     constructor(props){  
         super(props);
         this.state ={
+            neighborhoodName: this.props.neighborhoodName,
             tools: [],
             users: []
         }
@@ -26,7 +27,7 @@ componentDidMount= async () =>{
 }
 getNeighbors = async () => {
     console.log(this.props.neighborhoodId)
-    const response = await axios.get(`https://neighborhood-toolshed.herokuapp.com/${this.props.neighborhoodId}`)
+    const response = await axios.get(`https://neighborhood-toolshed.herokuapp.com/neighborhood/${this.props.neighborhoodId}`)
     console.log(response.data)
 return response.data
 }
@@ -35,13 +36,17 @@ getHoodTools = async (users)=> {
     const newUsers = await users.map(async(user) => {
     console.log(user)
     const data = {
-        id: user.userId
+        id: user.userId,
+        firstName: user.firstName,
+        lastName: user.lastName
       };
       console.log(data)
-    const response = await axios.post('https://neighborhood-toolshed.herokuapp.com/user/gettools'   || 'http://localhost:3001/user/gettools', data);
+    const toolResponse = await axios.post('https://neighborhood-toolshed.herokuapp.com/user/gettools'   || 'http://localhost:3001/user/gettools', data);
+    const userResponse = await axios.post('https://neighborhood-toolshed.herokuapp.com/user/gettools'   || 'http://localhost:3001/user/gettools', data);
     console.log(response.data)
     this.setState({
-        tools:response.data
+        tools:toolResponse.data,
+        user:userResponse.data
     })
         // user.tools = response.data;
       
@@ -56,7 +61,7 @@ console.log(this.state.users)
         <div className="main">
             {this.props.neighborhoodName} Neighborhood
             {this.state.tools.map(tool => (               
-              <li> {tool.toolName} {this.props.firstName} {this.props.lastName}</li>
+              <li> {tool.toolName} {user.firstName} {user.lastName}</li>
            )
         )}
         </div>
