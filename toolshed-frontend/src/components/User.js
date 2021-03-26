@@ -10,6 +10,7 @@ class User extends Component {
         this.state = {
             user: props.username,
             id: this.props.id,
+            toolId: "",
             neighborhoodName: this.props.neighborhoodName,
             neighborhoodPasscode: this.props.neighborhoodPasscode,
             neighborhoodId: this.props.neighborhoodId,
@@ -43,12 +44,12 @@ getTools = async () => {
     )
 }
 
-deleteTool = async (e) => {
+deleteTool = async (e, tool) => {
     e.preventDefault();
     console.log("delete")
     const data = {
-      toolId:this.state.id,
-      toolName: this.state.toolName
+      toolId:tool.id,
+      toolName: tool.toolName
   };
     console.log(data);
     const response = await axios.post( 'https://neighborhood-toolshed.herokuapp.com/user/deletetool' || 'http://localhost:3001/user/deletetool', data);
@@ -128,7 +129,7 @@ render(){console.log(this.state.neighborhoods)
             <div className="lists">
             <div className="list1">Your Tools
             {this.state.tools.map(tool => (               
-              <li className="tools"> {tool.toolName}<form onSubmit={this.deleteTool}><input className="toolButton" name="toolName" type="submit" value="Delete Tool"></input></form>
+              <li className="tools"> {tool.toolName}<form onSubmit={(e)=>this.deleteTool(e, tool)}><input className="toolButton" name="toolName" type="submit" value="Delete Tool"></input></form>
               </li>
            )
         )}</div>
