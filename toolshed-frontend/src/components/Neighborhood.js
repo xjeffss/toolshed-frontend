@@ -26,7 +26,7 @@ componentDidMount= async () =>{
 }
 getNeighbors = async () => {
     console.log(this.props.neighborhoodId)
-    const response = await axios.get(`http://localhost:3001/neighborhood/${this.props.neighborhoodId}`)
+    const response = await axios.get(`https://neighborhood-toolshed.herokuapp.com/${this.props.neighborhoodId}`)
     console.log(response.data)
 return response.data
 }
@@ -38,7 +38,7 @@ getHoodTools = async (users)=> {
         id: user.userId
       };
       console.log(data)
-    const response = await axios.post('http://localhost:3001/user/gettools'  || 'https://neighborhood-toolshed.herokuapp.com/user/gettools' , data);
+    const response = await axios.post('https://neighborhood-toolshed.herokuapp.com/user/gettools'   || 'http://localhost:3001/user/gettools', data);
     console.log(response.data)
     this.setState({
         tools:response.data
