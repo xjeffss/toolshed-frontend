@@ -9,7 +9,9 @@ class Neighborhood extends Component{
         this.state ={
             neighborhoodName: this.props.neighborhoodName,
             tools: [],
-            users: []
+            users: [],
+            firstName: "",
+            lastName: ""
         }
     }
 
@@ -27,7 +29,8 @@ componentDidMount= async () =>{
 }
 getNeighbors = async () => {
     console.log(this.props.neighborhoodId)
-    const response = await axios.get(`https://neighborhood-toolshed.herokuapp.com/neighborhood/${this.props.neighborhoodId}`)
+    // const response = await axios.get(`https://neighborhood-toolshed.herokuapp.com/neighborhood/${this.props.neighborhoodId}`)
+    const response = await axios.get(`http://localhost:3001/neighborhood/${this.props.neighborhoodId}`)
     console.log(response.data)
 return response.data
 }
@@ -41,27 +44,30 @@ getHoodTools = async (users)=> {
         lastName: user.lastName
       };
       console.log(data)
-    const toolResponse = await axios.post('https://neighborhood-toolshed.herokuapp.com/user/gettools'   || 'http://localhost:3001/user/gettools', data);
-    const userResponse = await axios.post('https://neighborhood-toolshed.herokuapp.com/user/gettools'   || 'http://localhost:3001/user/gettools', data);
-    console.log(response.data)
+    // const toolResponse = await axios.post('https://neighborhood-toolshed.herokuapp.com/user/gettools'   || 'http://localhost:3001/user/gettools', data);
+    // const userResponse = await axios.post('https://neighborhood-toolshed.herokuapp.com/user/getusers'   || 'http://localhost:3001/user/getusers', data);
+    const toolResponse = await axios.post( 'http://localhost:3001/user/gettools', data);
+    const userResponse = await axios.post( 'http://localhost:3001/user/getusers', data);
+    console.log(toolResponse.data)
     this.setState({
         tools:toolResponse.data,
-        user:userResponse.data
+        user:userResponse.data,
     })
         // user.tools = response.data;
-      
+      console.log(this.state.firstName)
       return user 
 }) 
 return newUsers
 }
     render (){
-console.log(this.state.users)
+console.log(this.state.firstName)
    
     return(
         <div className="main">
             {this.props.neighborhoodName} Neighborhood
             {this.state.tools.map(tool => (               
-              <li> {tool.toolName} {user.firstName} {user.lastName}</li>
+              <li> {tool.toolName} {this.state.user.map(toolUser => (<div>{toolUser.firstName} {toolUser.lastName}</div>))}</li>
+                  
            )
         )}
         </div>

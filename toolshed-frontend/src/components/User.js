@@ -34,8 +34,10 @@ getTools = async () => {
         id: this.props.id
       };
       console.log(data)
-    const userResponse = await axios.post('https://neighborhood-toolshed.herokuapp.com/user/gettools' ||'http://localhost:3001/user/gettools' , data);
-    const hoodResponse = await axios.post('https://neighborhood-toolshed.herokuapp.com/user/gethood' ||'http://localhost:3001/user/gethood' , data);
+    // const userResponse = await axios.post('https://neighborhood-toolshed.herokuapp.com/user/gettools' ||'http://localhost:3001/user/gettools' , data);
+    // const hoodResponse = await axios.post('https://neighborhood-toolshed.herokuapp.com/user/gethood' ||'http://localhost:3001/user/gethood' , data);
+    const userResponse = await axios.post('http://localhost:3001/user/gettools' , data);
+    const hoodResponse = await axios.post('http://localhost:3001/user/gethood' , data);
     console.log(userResponse)
     this.setState ({
         tools: userResponse.data, 
@@ -52,7 +54,8 @@ deleteTool = async (e, tool) => {
       toolName: tool.toolName
   };
     console.log(data);
-    const response = await axios.post( 'https://neighborhood-toolshed.herokuapp.com/user/deletetool' || 'http://localhost:3001/user/deletetool', data);
+    // const response = await axios.post( 'https://neighborhood-toolshed.herokuapp.com/user/deletetool' || 'http://localhost:3001/user/deletetool', data);
+    const response = await axios.post('http://localhost:3001/user/deletetool', data);
     console.log(response);
     // window.location.reload()
   };
@@ -71,7 +74,8 @@ deleteTool = async (e, tool) => {
       userId: this.state.id
   };
     console.log(data);
-    const response = await axios.post('https://neighborhood-toolshed.herokuapp.com/neighborhood/leavehood' ||'http://localhost:3001/neighborhood/leavehood', data);
+    // const response = await axios.post('https://neighborhood-toolshed.herokuapp.com/neighborhood/leavehood' ||'http://localhost:3001/neighborhood/leavehood', data);
+    const response = await axios.post('http://localhost:3001/neighborhood/leavehood', data);
     console.log(response);
     // window.location.reload()
   };
@@ -83,7 +87,8 @@ joinHood = async (e) => {
       userId: this.state.id,    
   };
     console.log(data);
-    const response = await axios.post( 'https://neighborhood-toolshed.herokuapp.com/neighborhood/joinhood' ||'http://localhost:3001/neighborhood/joinhood' , data);
+    // const response = await axios.post( 'https://neighborhood-toolshed.herokuapp.com/neighborhood/joinhood' ||'http://localhost:3001/neighborhood/joinhood' , data);
+    const response = await axios.post('http://localhost:3001/neighborhood/joinhood' , data);
     console.log(response);
     this.setState ({
         neighborhoods:response
@@ -108,7 +113,8 @@ joinHoodOnChange = (e) => {
         neighborhoodPasscode: this.state.neighborhoodPasscode
     };
       console.log(data);
-      const response = await axios.post( 'https://neighborhood-toolshed.herokuapp.com/neighborhood/addhood' || 'http://localhost:3001/neighborhood/addhood', data);
+      // const response = await axios.post( 'https://neighborhood-toolshed.herokuapp.com/neighborhood/addhood' || 'http://localhost:3001/neighborhood/addhood', data);
+      const response = await axios.post('http://localhost:3001/neighborhood/addhood', data);
       console.log(response);
       // window.location.reload()
   };

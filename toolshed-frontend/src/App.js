@@ -64,8 +64,8 @@ class App extends Component {
       id: this.state.id
     };
     console.log(data);
-    const response = await axios.post('https://neighborhood-toolshed.herokuapp.com/auth/login' || 'http://localhost:3001/auth/login', data);
-    // const response = await axios.post('http://localhost:3001/auth/login' , data);
+    // const response = await axios.post('https://neighborhood-toolshed.herokuapp.com/auth/login' || 'http://localhost:3001/auth/login', data);
+    const response = await axios.post('http://localhost:3001/auth/login' , data);
     console.log(response.data);
     localStorage.setItem("userId", data.id)
     localStorage.setItem("username", data.username)
@@ -94,7 +94,8 @@ class App extends Component {
       email: this.state.email
     };
     console.log(data);
-    const response = await axios.post('https://neighborhood-toolshed.herokuapp.com/auth/signup' || 'http://localhost:3001/auth/signup', data);
+    // const response = await axios.post('https://neighborhood-toolshed.herokuapp.com/auth/signup' || 'http://localhost:3001/auth/signup', data);
+    const response = await axios.post('http://localhost:3001/auth/signup', data);
     console.log(response);
     this.setState({
       firstName: response.data.firstName,
@@ -119,7 +120,8 @@ addTool = async (e) => {
       userId: this.state.id
   };
     console.log(data);
-    const response = await axios.post('https://neighborhood-toolshed.herokuapp.com/user/addtool'||'http://localhost:3001/user/addtool',  data);
+    // const response = await axios.post('https://neighborhood-toolshed.herokuapp.com/user/addtool'||'http://localhost:3001/user/addtool',  data);
+    const response = await axios.post('http://localhost:3001/user/addtool',  data);
     console.log(response);
     // window.location.reload()
 };
@@ -137,7 +139,8 @@ addHood = async (e) => {
       neighborhoodPasscode: this.state.neighborhoodPasscode
   };
     console.log(data);
-    const response = await axios.post('https://neighborhood-toolshed.herokuapp.com/neighborhood/addhood'  ||'http://localhost:3001/neighborhood/addhood' , data);
+    // const response = await axios.post('https://neighborhood-toolshed.herokuapp.com/neighborhood/addhood'  ||'http://localhost:3001/neighborhood/addhood' , data);
+    const response = await axios.post('http://localhost:3001/neighborhood/addhood' , data);
     console.log(response);
     // window.location.reload()
 };
