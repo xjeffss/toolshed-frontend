@@ -42,7 +42,7 @@ return response.data
 getHoodTools = async (users)=> {
     console.log(users)
     const newUsers = await users.map(async(user) => {
-    console.log(user.Neighborhood)
+    console.log(user)
     this.setState({
         userHood:user.Neighborhood
     })
