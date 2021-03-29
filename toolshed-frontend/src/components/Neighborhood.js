@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import '../User.css'
+import '../Neighborhood.css'
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 
@@ -7,7 +7,7 @@ class Neighborhood extends Component{
     constructor(props){  
         super(props);
         this.state ={
-            neighborhoodName: this.props.neighborhoodName,
+            neighborhoods: "",
             tools: [],
             users: [],
             firstName: "",
@@ -28,10 +28,13 @@ componentDidMount= async () =>{
     )
 }
 getNeighbors = async () => {
-    console.log(this.props.neighborhoodId)
+    console.log(this.props.neighborhoodName)
     // const response = await axios.get(`https://neighborhood-toolshed.herokuapp.com/neighborhood/${this.props.neighborhoodId}`)
     const response = await axios.get(`http://localhost:3001/neighborhood/${this.props.neighborhoodId}`)
-    console.log(response.data)
+    this.setState({
+        neighborhoods: response.data.Neighborhood,
+    })
+      
 return response.data
 }
 getHoodTools = async (users)=> {
@@ -54,19 +57,19 @@ getHoodTools = async (users)=> {
         user:userResponse.data,
     })
         // user.tools = response.data;
-      console.log(this.state.firstName)
       return user 
 }) 
 return newUsers
 }
     render (){
-console.log(this.state.firstName)
+console.log(this.state.neighborhoods)
    
     return(
-        <div className="main">
-            {this.props.neighborhoodName} Neighborhood
+        <div className="mainHood">
+            {this.state.neighborhoods} Neighborhood
             {this.state.tools.map(tool => (               
-              <li> {tool.toolName} {this.state.user.map(toolUser => (<div>{toolUser.firstName} {toolUser.lastName}</div>))}</li>
+              <li className="toolList"> {tool.toolName} -- {this.state.user.map(toolUser => (
+              <div >{toolUser.firstName} {toolUser.lastName}</div>))}</li>
                   
            )
         )}

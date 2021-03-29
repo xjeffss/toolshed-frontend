@@ -1,9 +1,13 @@
-.main {
-    display: block;
-    align-content: center; 
+.mainHood {
+    text-align: center;
     margin: 5%;
     border:rgb(30, 127, 184) solid 5px;
     padding: 5%;
     color:lemonchiffon;
-    font-size: 10vw;
+    font-size: 5vw;
+}
+.toolList{
+    display: flex;
+    align-content: space-between;
+    font-size: 3.5vw;
 }
