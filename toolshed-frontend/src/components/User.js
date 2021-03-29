@@ -151,7 +151,7 @@ render(){console.log(this.state.neighborhoods)
           </div>   
             <div className="garagedoor"></div>
         </div>
-
+        <div className="grassBackground">
         <div className="create">
         <div className="createLocalhood">
 
@@ -232,7 +232,7 @@ render(){console.log(this.state.neighborhoods)
             
             </div>
             </div>
-           
+            </div>
         </div>
     )
 }
