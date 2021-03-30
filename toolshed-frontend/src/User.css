@@ -153,13 +153,13 @@ body {
 
 @keyframes grass{
   0% {
-    background: rgba(8, 160, 8, 0.432);
+    background: rgba(7, 102, 7, 0.432);
   }
   50%{
-    background: rgb(10, 168, 10);
+    background: rgb(6, 124, 6);
   }
   100%{
-    background:  rgb(8, 160, 8, 0.432);
+    background:  rgb(7, 102, 7, 0.432);
   }
     
 
