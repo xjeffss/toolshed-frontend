@@ -105,9 +105,32 @@ body {
     border-right: 39vw solid transparent;
     border-bottom: 8vw solid rgb(66, 34, 11);
     border-top: 00vw solid transparent;
-    bottom:79vh;
+    bottom:52vh;
     position: absolute;
-    left: 10vw;
+    left: -4vw;
+    border: siver 1px solid;
+}
+.roofLeft {
+  background: silver;
+  position: absolute;
+  border: darkslategrey solid;
+  top: -10em;
+  width: 2vw;
+  height: 43vw;
+  left:13.5vw;
+  transform: rotate(78deg);
+  z-index: +1;
+}
+.roofRight {
+  background: silver;
+  position: absolute;
+  border: darkslategrey solid;
+  top:-10em;
+  width: 2vw;
+  height: 43vw;
+  left:54.5vw;
+  transform: rotate(102deg);
+  z-index: +1;
 }
  .shed {
     bottom: 27vh;
