@@ -126,8 +126,6 @@ render(){console.log(this.state.neighborhoods)
         </div>
         <div id="cloud-circle2">   
         </div>
-
-
         <div className="shed">
          <div className="roofLeft"></div> 
         <div className="roofRight"></div> 
