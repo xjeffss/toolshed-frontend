@@ -126,8 +126,8 @@ render(){console.log(this.state.neighborhoods)
         </div>
         <div id="cloud-circle2">   
         </div>
-
-           
+      <div className="fullShed">
+        <div className="shedTop"></div>   
         <div className="shed">
             <div className="greet">
                 {this.props.firstName}'s Shed
@@ -150,7 +150,7 @@ render(){console.log(this.state.neighborhoods)
         </div> 
           </div>   
             <div className="garagedoor"></div>
-        </div>
+        </div></div>
         <div className="grassBackground">
         <div className="create">
         <div className="createLocalhood">

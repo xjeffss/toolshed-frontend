@@ -100,7 +100,15 @@ body {
       
       }
   }
-  
+  .shedTop {
+    border-left: 39vw solid transparent;
+    border-right: 39vw solid transparent;
+    border-bottom: 8vw solid rgb(66, 34, 11);
+    border-top: 00vw solid transparent;
+    bottom:79vh;
+    position: absolute;
+    left: 10vw;
+}
  .shed {
     bottom: 27vh;
     position: absolute;
@@ -108,10 +116,9 @@ body {
     background: gray;
     margin-left: 10vw;
     width: 78vw;
-    height: 59vh;
+    height: 52vh;
     border: rgb(66, 34, 11) solid ;
-    border-width: 10vw 4vw 0px 4vw;
-    border-radius: 5% 5% 0% 0%;
+    border-width: 4vw 4vw 0px 4vw;
 
 }
 .lists {
