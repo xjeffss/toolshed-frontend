@@ -100,7 +100,38 @@ body {
       
       }
   }
-  
+  .shedTop {
+    border-left: 39vw solid transparent;
+    border-right: 39vw solid transparent;
+    border-bottom: 8vw solid rgb(66, 34, 11);
+    border-top: 00vw solid transparent;
+    bottom:52vh;
+    position: absolute;
+    left: -4vw;
+    border: siver 1px solid;
+}
+.roofLeft {
+  background: silver;
+  position: absolute;
+  border: darkslategrey solid;
+  top: -10em;
+  width: 2vw;
+  height: 43vw;
+  left:13.5vw;
+  transform: rotate(78deg);
+  z-index: +1;
+}
+.roofRight {
+  background: silver;
+  position: absolute;
+  border: darkslategrey solid;
+  top:-10em;
+  width: 2vw;
+  height: 43vw;
+  left:54.5vw;
+  transform: rotate(102deg);
+  z-index: +1;
+}
  .shed {
     bottom: 27vh;
     position: absolute;
@@ -108,10 +139,9 @@ body {
     background: gray;
     margin-left: 10vw;
     width: 78vw;
-    height: 59vh;
+    height: 52vh;
     border: rgb(66, 34, 11) solid ;
-    border-width: 10vw 4vw 0px 4vw;
-    border-radius: 5% 5% 0% 0%;
+    border-width: 4vw 4vw 0px 4vw;
 
 }
 .lists {
@@ -153,13 +183,13 @@ body {
 
 @keyframes grass{
   0% {
-    background: rgba(8, 160, 8, 0.432);
+    background: rgba(7, 102, 7, 0.432);
   }
   50%{
-    background: rgb(10, 168, 10);
+    background: rgb(6, 124, 6);
   }
   100%{
-    background:  rgb(8, 160, 8, 0.432);
+    background:  rgb(7, 102, 7, 0.432);
   }
     
 

@@ -71,13 +71,18 @@ render(){
             /> 
             <input type='submit'  value='Login' />
             </form> 
-            <div class="house-wrap">
+           
+        <div class="house-wrap">
+            
 		<div class="blue-block"></div>
-		<div class="roof">	
+        
+		<div class="roof">
+	
 			<div class="slant left">
 				<div class="slant-shadow"></div>
 			</div>
 			<div class="slant right"></div>
+             <div className="houseTop"></div> 
 			<div class="chimney"></div>
 			<div class="smoke"></div>
 			<div class="smoke two"></div>
@@ -90,6 +95,15 @@ render(){
 			<div class="smoke nine"></div>
 		</div>
 		<div class="window circle-window"></div>
+        <div class="window top">
+			<div class="window-frame top"></div>
+			<div class="window-frame bottom"></div>
+			<div class="window-frame left"></div>
+			<div class="window-frame right"></div>
+			<div class="window-frame mullion"></div>
+			<div class="window-shadow"></div>
+			<div class="window-shadow vert"></div>
+		</div>
 		<div class="window left">
 			<div class="window-frame top"></div>
 			<div class="window-frame bottom"></div>

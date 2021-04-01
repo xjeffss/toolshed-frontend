@@ -24,7 +24,7 @@ login {
     align-content: center; 
     margin: 5%;
     border:rgb(30, 127, 184) solid 5px;
-    padding: 5%;
+    padding: 2%;
 }
 /* from Charles Bisbee on CodePen */
 * {
@@ -42,22 +42,22 @@ login {
     background-color: steelblue;
   }
   body .house-wrap {
-    background-color: #efdd6f;
-    width: 380px;
-    height: 425px;
-    margin: -3em 6em 0em 19em ;
+    background-color: whitesmoke;
+    width: 445px;
+    height: 295px;
+    margin: 1vw 6vw 0vw 34vw ;
     position: relative;
     border: 3px solid #333;
   }
-  body .house-wrap::before, body .house-wrap::after {
-    width: 200px;
-    height: 38px;
-    top: 55px;
-    left: 20px;
-    transform: rotate(-33deg);
-    background: #a79a4d;
-    filter: blur(2px);
-  }
+  .houseTop {
+    border-left: 171px solid transparent;
+    border-right: 171px solid transparent;
+    border-bottom: 135px solid whitesmoke;
+    border-top: 00px solid transparent;
+  
+   
+}
+
   body .house-wrap::after {
     left: auto;
     height: 38px;
@@ -79,35 +79,32 @@ login {
   body .house-wrap .roof {
     height: 30px;
     position: absolute;
-    top: 70px;
+    top: -133px;
     width: 100%;
   }
-  body .house-wrap .roof::before, body .house-wrap .roof::after {
-    background-color: steelblue;
-    width: 251px;
-    height: 128px;
-    transform: rotate(-45deg);
-    top: -93px;
-    left: -94px;
-  }
-  body .house-wrap .roof::after {
-    left: auto;
-    right: -94px;
-    transform: rotate(45deg);
-  }
+  
   body .house-wrap .roof .slant {
     position: absolute;
     z-index: 2;
-    top: 0;
+    bottom: -50px;
     left: -59px;
-    width: 300px;
+    width: 315px;
     height: 100%;
-    transform: rotate(-45deg);
-    background-color: #8b0000;
+    transform: rotate(-35deg);
+    background-color: #7a5230;
     border: 3px solid #333;
   }
+  body .house-wrap .roof::before, body .house-wrap .roof::after {
+    width: 280px;
+    height: 24px;
+    top: 55px;
+    left: -24px;
+    transform: rotate(-32deg);
+    background: #91908c;
+    filter: blur(2px);
+  }
   body .house-wrap .roof .slant.left .slant-shadow {
-    background-color: #b60004;
+    background-color: #704926;
     width: 100px;
     height: 20px;
     position: absolute;
@@ -117,7 +114,7 @@ login {
     border-radius: 0 0px 75% 75%;
   }
   body .house-wrap .roof .slant.left .slant-shadow::before, body .house-wrap .roof .slant.left .slant-shadow::after {
-    background: #b60004;
+    background: #704926;
     top: 0;
     width: 42px;
     height: 11px;
@@ -127,22 +124,24 @@ login {
   body .house-wrap .roof .slant.left .slant-shadow::after {
     left: auto;
     right: -20px;
-    background: #b60004;
+    background: #704926;
     border-radius: 0 0 93% 0;
     width: 60px;
     top: 0px;
   }
   body .house-wrap .roof .slant.right {
-    transform: rotate(45deg);
+    transform: rotate(35deg);
     left: auto;
     right: -59px;
   }
   body .house-wrap .roof .slant.right::before {
-    background: #8b0000;
-    top: 0;
+    background: #7a5230;
+    top: 3;
     width: 24px;
-    height: 36px;
-    left: -1px;
+    height: 35px;
+    left: -8px;
+    transform: rotate(22deg);
+
   }
   body .house-wrap .roof .chimney {
     background-color: #777;
@@ -150,7 +149,7 @@ login {
     width: 40px;
     position: absolute;
     right: 78px;
-    top: -91px;
+    top: -36px;
     z-index: 1;
     border: 3px solid #333;
   }
@@ -191,7 +190,7 @@ login {
   }
   @keyframes ani1 {
     from {
-      top: -150px;
+      top: -100px;
     }
     to {
       top: -450px;
@@ -205,7 +204,7 @@ login {
   }
   @keyframes ani2 {
     from {
-      top: -170px;
+      top: -100px;
     }
     to {
       top: -400px;
@@ -220,7 +219,7 @@ login {
   }
   @keyframes ani3 {
     from {
-      top: -190px;
+      top: -120px;
     }
     to {
       top: -380px;
@@ -237,7 +236,7 @@ login {
   }
   @keyframes ani4 {
     from {
-      top: -200px;
+      top: -1200px;
     }
     to {
       top: -400px;
@@ -253,7 +252,7 @@ login {
   }
   @keyframes ani5 {
     from {
-      top: -160px;
+      top: -100px;
     }
     to {
       top: -300px;
@@ -333,11 +332,11 @@ login {
     width: 90px;
     background-color: lightblue;
     position: absolute;
-    top: 175px;
+    top: 44px;
     left: 40px;
   }
   body .house-wrap .window .window-shadow {
-    background-color: #a79a4d;
+    background-color: #91908c;
     height: 10px;
     width: 92px;
     position: absolute;
@@ -347,7 +346,7 @@ login {
     transform: skewY(3deg);
   }
   body .house-wrap .window .window-shadow.vert {
-    background: #a79a4d;
+    background: #91908c;
     width: 8px;
     height: 77px;
     left: auto;
@@ -356,7 +355,12 @@ login {
     transform: skewX(5deg);
   }
   body .house-wrap .window.bottom {
-    top: 280px;
+    top: 180px;
+  }
+  body .house-wrap .window.top {
+    top: -59px;
+    left:172px;
+ 
   }
   body .house-wrap .window::before, body .house-wrap .window::after {
     background-color: #e6f3f7;
@@ -374,7 +378,7 @@ login {
     transform: skewX(-20deg);
   }
   body .house-wrap .window .window-frame {
-    background-color: #966f33;
+    background-color:  #7a5230;
     width: 100%;
     height: 10px;
     position: absolute;
@@ -411,7 +415,7 @@ login {
     width: 90px;
     position: absolute;
     bottom: 0;
-    left: 142px;
+    left: 178px;
     border-radius: 50px 50px 0 0;
     border: 2px solid #333;
     border-bottom: none;

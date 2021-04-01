@@ -29,14 +29,19 @@ componentDidMount= async () =>{
     )
 }
 getNeighbors = async () => {
+<<<<<<< HEAD
     console.log(this.props.neighborhoodName)
     const response = await axios.get(`https://neighborhood-toolshed.herokuapp.com/neighborhood/${this.props.neighborhoodId}`)
     // const response = await axios.get(`http://localhost:3001/neighborhood/${this.props.neighborhoodId}`)
+=======
+    // const response = await axios.get(`https://neighborhood-toolshed.herokuapp.com/neighborhood/${this.props.neighborhoodId}`)
+    const response = await axios.get(`http://localhost:3001/neighborhood/${this.props.neighborhoodId}`)
+>>>>>>> newtoolshed
     console.log(response.data)
     this.setState({
         neighborhoods: response.data.Neighborhood,
     })
-    console.log(this.state.neighborhoods)    
+    console.log(response.data)    
 return response.data
 }
 getHoodTools = async (users)=> {
@@ -60,10 +65,10 @@ getHoodTools = async (users)=> {
         tools:toolResponse.data,
         user:userResponse.data,
     })
-console.log(this.state.user)
+
       return user 
 }) 
-
+console.log(this.state.newUsers)
 return newUsers
 }
     render (){
