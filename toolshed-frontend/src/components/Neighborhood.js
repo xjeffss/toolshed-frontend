@@ -77,8 +77,8 @@ console.log(this.state.neighborhoodTools);
             <div className="mainHood">
                 {this.state.neighborhoodTools[0].Neighborhoods[0].neighborhoodName} Neighborhood
                 {this.state.neighborhoodTools.map(neighbors => (              
-                <li className="toolList"> {neighbors.Tools.map(tool => (
-                    <div>{tool.toolName}</div>))} --{neighbors.firstName} {neighbors.lastName}</li>
+                <li > {neighbors.Tools.map(tool => (
+                    <li className="toolList">{tool.toolName}</li>))} --{neighbors.firstName} {neighbors.lastName}</li>
                     
             )
             )}
