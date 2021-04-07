@@ -20,7 +20,7 @@ class Neighborhood extends Component{
 
 componentDidMount= async () =>{
     
-    const users= await this.getNeighborsTools();
+    await this.getNeighborsTools();
     // console.log(users)
     // const newUsers= await this.getHoodTools(users);
     // console.log(newUsers)
@@ -30,7 +30,7 @@ componentDidMount= async () =>{
     // }
     // )
 }
-getNeighbors = async () => {
+getNeighborsTools = async () => {
     console.log(this.props.neighborhoodName)
     const response = await axios.get(`https://neighborhood-toolshed.herokuapp.com/neighborhood/${this.props.neighborhoodId}`)
     // const response = await axios.get(`http://localhost:3001/neighborhood/${this.props.neighborhoodId}`)
