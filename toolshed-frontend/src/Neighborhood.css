@@ -4,10 +4,19 @@
     border:rgb(30, 127, 184) solid 5px;
     padding: 5%;
     color:lemonchiffon;
+    height: 80vh;
+    width: 90vw;
     font-size: 5vw;
 }
 .toolList{
-    display: flex;
+    color: lightgrey;
+    column-span: all;
     font-size: 3vw;
     margin: 1vw;
+}
+.neighbor{
+    color:rgb(255, 136, 0);
+    text-align: left;
+    font-size: 3vw;
+    margin: 0vw;  
 }
