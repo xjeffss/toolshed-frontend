@@ -13,7 +13,8 @@ class Neighborhood extends Component{
             firstName: "",
             lastName: "",
             userHood:"",
-            neighborhoodTools: ""
+            neighborhoodTools: "",
+            dataLoaded: false
         }
     }
 
@@ -35,6 +36,7 @@ getNeighborsTools = async () => {
     console.log(response.data)
     this.setState({
         neighborhoodTools: response.data,
+        dataLoaded: true,
     })
     console.log(this.state.neighborhoodTools)    
     return (this.state.neighborhoodTools)
@@ -68,19 +70,27 @@ console.log(this.state.userHood)
 return newUsers
 }
     render (){
-console.log(this.state.neighborhoodTools)
-   
+console.log(this.state.neighborhoodTools);
+   if(this.state.dataLoaded){
     return(
-        <div className="mainHood">
-            {/* {this.state.userHood.neighborhoodName} Neighborhood
-            {this.state.neighborhoodTools.map(tool => (               
-            <li className="toolList">{tool.toolName} --{tool.User.firstName} {tool.User.lastName}</li>
-                  
-           )
-        )} */}
-        </div>
+            
+            <div className="mainHood">
+                {this.state.neighborhoodTools[0].Neighborhoods[0].neighborhoodName} Neighborhood
+                {this.state.neighborhoodTools.map(neighbors => (              
+                <li className="toolList"> {neighbors.Tools.map(tool => (
+                    <div>{tool.toolName}</div>))} --{neighbors.firstName} {neighbors.lastName}</li>
+                    
+            )
+            )}
+            </div>
 
+        )
+    }
+   else {    return (
+        <div>
+            Data Loading
+        </div>
     )
-}
- }
+    
+ }  } }
 export default Neighborhood;
