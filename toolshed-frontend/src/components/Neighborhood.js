@@ -19,16 +19,7 @@ class Neighborhood extends Component{
     }
 
 componentDidMount= async () =>{
-    
     await this.getNeighborsTools();
-    // console.log(users)
-    // const newUsers= await this.getHoodTools(users);
-    // console.log(newUsers)
-    // this.setState( {
-    //     users: newUsers,
-  
-    // }
-    // )
 }
 getNeighborsTools = async () => {
     console.log(this.props.neighborhoodName)
@@ -42,56 +33,24 @@ getNeighborsTools = async () => {
     console.log(this.state.neighborhoodTools)    
     return (this.state.neighborhoodTools)
 }
-// getHoodTools = async (users)=> {
-//     console.log(users)
-//     const newUsers = await users.map(async(user) => {
-//     console.log(user)
-//     this.setState({
-//         userHood:user.Neighborhood
-//     })
-//     const data = {
-//         id: user.id,
-//         firstName: user.firstName,
-//         lastName: user.lastName
-//       };
-//       console.log(data)
-//     // const toolResponse = await axios.post('https://neighborhood-toolshed.herokuapp.com/user/gettools'   || 'http://localhost:3001/user/gettools', data);
-//     // const userResponse = await axios.post('https://neighborhood-toolshed.herokuapp.com/user/getusers'   || 'http://localhost:3001/user/getusers', data);
-//     const toolResponse = await axios.post( 'http://localhost:3001/user/gettools', data);
-//     const userResponse = await axios.post( 'http://localhost:3001/user/getusers', data);
-//     console.log(toolResponse.data)
-//     this.setState({
-//         tools:toolResponse.data,
-//         user:userResponse.data,
-//     })
-
-//       return user 
-// }) 
-
-// return newUsers
-// }
     render (){
 console.log(this.state.neighborhoodTools);
    if(this.state.dataLoaded){
-    return(
-            
+    return(       
             <div className="mainHood">
                 {this.state.neighborhoodTools[0].Neighborhoods[0].neighborhoodName} Neighborhood
                 {this.state.neighborhoodTools.map(neighbors => (              
                 <li className="neighbor"> {neighbors.firstName} {neighbors.lastName}{neighbors.Tools.map(tool => (
-                    <li className="toolList">{tool.toolName}</li>))} </li>
-                    
+                    <li className="toolList">{tool.toolName}</li>))} </li>                   
             )
             )}
             </div>
-
         )
-    }
-   else {    return (
+    } else {    
+    return (
         <div>
             Data Loading
         </div>
     )
-    
  }  } }
 export default Neighborhood;
