@@ -21,14 +21,14 @@ class Neighborhood extends Component{
 componentDidMount= async () =>{
     
     const users= await this.getNeighborsTools();
-    console.log(users)
-    const newUsers= await this.getHoodTools(users);
-    console.log(newUsers)
-    this.setState( {
-        users: newUsers,
+    // console.log(users)
+    // const newUsers= await this.getHoodTools(users);
+    // console.log(newUsers)
+    // this.setState( {
+    //     users: newUsers,
   
-    }
-    )
+    // }
+    // )
 }
 getNeighborsTools = async () => {
     // const response = await axios.get(`https://neighborhood-toolshed.herokuapp.com/neighborhood/${this.props.neighborhoodId}`)
@@ -41,34 +41,34 @@ getNeighborsTools = async () => {
     console.log(this.state.neighborhoodTools)    
     return (this.state.neighborhoodTools)
 }
-getHoodTools = async (users)=> {
-    console.log(users)
-    const newUsers = await users.map(async(user) => {
-    console.log(user)
-    this.setState({
-        userHood:user.Neighborhood
-    })
-    const data = {
-        id: user.id,
-        firstName: user.firstName,
-        lastName: user.lastName
-      };
-      console.log(data)
-    // const toolResponse = await axios.post('https://neighborhood-toolshed.herokuapp.com/user/gettools'   || 'http://localhost:3001/user/gettools', data);
-    // const userResponse = await axios.post('https://neighborhood-toolshed.herokuapp.com/user/getusers'   || 'http://localhost:3001/user/getusers', data);
-    const toolResponse = await axios.post( 'http://localhost:3001/user/gettools', data);
-    const userResponse = await axios.post( 'http://localhost:3001/user/getusers', data);
-    console.log(toolResponse.data)
-    this.setState({
-        tools:toolResponse.data,
-        user:userResponse.data,
-    })
-console.log(this.state.userHood)
-      return user 
-}) 
+// getHoodTools = async (users)=> {
+//     console.log(users)
+//     const newUsers = await users.map(async(user) => {
+//     console.log(user)
+//     this.setState({
+//         userHood:user.Neighborhood
+//     })
+//     const data = {
+//         id: user.id,
+//         firstName: user.firstName,
+//         lastName: user.lastName
+//       };
+//       console.log(data)
+//     // const toolResponse = await axios.post('https://neighborhood-toolshed.herokuapp.com/user/gettools'   || 'http://localhost:3001/user/gettools', data);
+//     // const userResponse = await axios.post('https://neighborhood-toolshed.herokuapp.com/user/getusers'   || 'http://localhost:3001/user/getusers', data);
+//     const toolResponse = await axios.post( 'http://localhost:3001/user/gettools', data);
+//     const userResponse = await axios.post( 'http://localhost:3001/user/getusers', data);
+//     console.log(toolResponse.data)
+//     this.setState({
+//         tools:toolResponse.data,
+//         user:userResponse.data,
+//     })
 
-return newUsers
-}
+//       return user 
+// }) 
+
+// return newUsers
+// }
     render (){
 console.log(this.state.neighborhoodTools);
    if(this.state.dataLoaded){
@@ -77,8 +77,8 @@ console.log(this.state.neighborhoodTools);
             <div className="mainHood">
                 {this.state.neighborhoodTools[0].Neighborhoods[0].neighborhoodName} Neighborhood
                 {this.state.neighborhoodTools.map(neighbors => (              
-                <li > {neighbors.Tools.map(tool => (
-                    <li className="toolList">{tool.toolName}</li>))} --{neighbors.firstName} {neighbors.lastName}</li>
+                <li className="neighbor"> {neighbors.firstName} {neighbors.lastName}{neighbors.Tools.map(tool => (
+                    <li className="toolList">{tool.toolName}</li>))} </li>
                     
             )
             )}
