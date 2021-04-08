@@ -53,6 +53,12 @@ This is where the user will add or delete tools to his shed that will also appea
 
 <img src="https://github.com/xjeffss/toolshed-frontend/blob/main/toolshed-frontend/public/images/Screen%20Shot%202021-04-07%20at%208.18.54%20AM.png?raw=true">
 
+Getting all the neighbors and tools to display forced a deep understanding of (and experimenting with) join tables.  My original method would write each user and their tools separately, then overwrite them when writing the next neighbor and their tools leaving only the last neighbor's information visible.  I found that I was able to run a queary in postgres that produced the data I was looking for, so I knew it was possible with the way the database and table interactions were currently set up.
+
+<img src="https://github.com/xjeffss/toolshed-frontend/blob/main/toolshed-frontend/public/images/BF51B923-A289-436C-A2F8-80EFC4B7C518_4_5005_c.jpeg?raw=true">
+
+As I experimented with the backend repository, I found a combination of belongsTo/belongsToMany/hasMany/hasOne through all the models would return the neighborhood name, all the users that were a member of that neighborhood and their tools in one block of returned data. I originally was querying for a "Neighborhoods" or "Tools" model (table) and trying to include other models but that wouldn't bring in all the data.  Finally I was able to queary the "Users" model and gather all the users, tools and neighborhoodName associated with a specific neighborhood.
+
 <img src="">
 
 <img src="">
