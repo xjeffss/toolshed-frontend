@@ -37,7 +37,7 @@ This is the user page with future goals of tracking lending to your neighbors.
 ## Summary
 This website was the result of a question I asked to people around me, "What website do you wish existed?"  The most intriguing answer was about a website where neighbors could display to their neighbors what tools they had that were available to them for loan. This drove the MVP and MVP ++ requirements below.
 
-## MVP - 
+## MVP 
 * Create User
 * Login 
 * Create Neighborhood with passcode
