@@ -84,6 +84,7 @@ class App extends Component {
       [e.target.name]: e.target.value,
     });
   };
+
   signup = async (e) => {
     e.preventDefault();
     const data = {
@@ -96,13 +97,19 @@ class App extends Component {
     console.log(data);
     const response = await axios.post('https://neighborhood-toolshed.herokuapp.com/auth/signup', data);
     // const response = await axios.post('http://localhost:3001/auth/signup', data);
-    console.log(response);
+    const loginData = {
+      username: response.data.username,
+      password: response.data.password
+    }
+    const responselogin = await axios.post('https://neighborhood-toolshed.herokuapp.com/auth/login', data);
+    // const responselogin = await axios.post('http://localhost:3001/auth/login' , loginData);
     this.setState({
-      firstName: response.data.firstName,
-      lastName: response.data.lastName,  
-      id: response.data.id
+      firstName: responselogin.data.firstName,
+      lastName: responselogin.data.lastName,  
+      id: responselogin.data.id
     }
     );
+    this.props.history.push(`/user/${this.state.id}`)
   };
 addToolOnChange = (e) => {
   e.preventDefault();
