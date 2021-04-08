@@ -34,4 +34,4 @@ This website was the result of a question I asked to people around me, "What web
 * Be able to list only certain categories of tools to each neighborhood
 * Be able to post requests on your Neighborhood page that email neighbors when someone posts
 
-<img src="./public/images/91A01B82-B2B5-4AF5-B4E5-2346E0A5739E.jpeg">
+<img src="./toolshed-frontend/public/images/91A01B82-B2B5-4AF5-B4E5-2346E0A5739E.jpeg">
