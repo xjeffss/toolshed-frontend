@@ -72,13 +72,11 @@ getNeighborsTools = async () => {
     render (){
 console.log(this.state.neighborhoodTools);
    if(this.state.dataLoaded){
-    return(
-            
-            <div className="mainHood">
-                {this.state.neighborhoodTools[0].Neighborhoods[0].neighborhoodName} Neighborhood
+    return(      
+            <div className="list"> <div className="mainHood">{this.state.neighborhoodTools[0].Neighborhoods[0].neighborhoodName} Neighborhood</div>               
                 {this.state.neighborhoodTools.map(neighbors => (              
                 <li className="neighbor"> {neighbors.firstName} {neighbors.lastName}{neighbors.Tools.map(tool => (
-                    <li className="toolList">{tool.toolName}</li>))} </li>
+                    <div className="toolList">{tool.toolName}</div>))} </li>
                     
             )
             )}
