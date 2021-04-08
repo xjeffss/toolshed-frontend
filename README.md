@@ -57,12 +57,16 @@ Getting all the neighbors and tools to display forced a deep understanding of (a
 
 <img src="https://github.com/xjeffss/toolshed-frontend/blob/main/toolshed-frontend/public/images/BF51B923-A289-436C-A2F8-80EFC4B7C518_4_5005_c.jpeg?raw=true">
 
-As I experimented with the backend repository, I found a combination of belongsTo/belongsToMany/hasMany/hasOne through all the models would return the neighborhood name, all the users that were a member of that neighborhood and their tools in one block of returned data. I originally was querying for a "Neighborhoods" or "Tools" model (table) and trying to include other models but that wouldn't bring in all the data.  Finally I was able to queary the "Users" model and gather all the users, tools and neighborhoodName associated with a specific neighborhood.
+As I experimented with the backend repository, I found a combination of belongsTo/belongsToMany/hasMany/hasOne through all the models would return the neighborhood name, all the users that were a member of that neighborhood and their tools in one block of returned data. I originally was querying for a "Neighborhoods" or "Tools" model (table) and trying to include other models but that wouldn't bring in all the data.  Finally I was able to queary the "Users" model and gather all the users, tools and neighborhoodName associated with a specific neighborhood (seen on the right below) and display them on the browser Neighborhood page.
 
-<img src="">
+<img src="https://github.com/xjeffss/toolshed-frontend/blob/main/toolshed-frontend/public/images/4E52DC53-7405-4548-8083-E8972695B75E_1_105_c.jpeg?raw=true">
 
-<img src="">
+This was the queary that worked
 
-<img src="">
+<img src="https://github.com/xjeffss/toolshed-frontend/blob/main/toolshed-frontend/public/images/Screen%20Shot%202021-04-07%20at%208.13.58%20AM.png?raw=true">
+
+and how it is requested, retrieved and displayed
+
+<img src="https://github.com/xjeffss/toolshed-frontend/blob/main/toolshed-frontend/public/images/Screen%20Shot%202021-04-07%20at%208.16.57%20AM.png?raw=true">
 
 <img src="">
