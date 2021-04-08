@@ -37,4 +37,6 @@ This website was the result of a question I asked to people around me, "What web
 This was the original login screen.  The image was created by Charles Brisbee on Code Pen.  I studied his work and made modifications to make it look like the second picture.
 
 <img src="./toolshed-frontend/public/images/91A01B82-B2B5-4AF5-B4E5-2346E0A5739E.jpeg">
+
+Once the user registers or logs in, it takes him to his "toolshed" page where an opening garage door reveals a list of his tools and neighborhoods of which he is a member.
 <img src="https://github.com/xjeffss/toolshed-frontend/blob/main/toolshed-frontend/public/images/Screen%20Shot%202021-04-07%20at%208.21.06%20AM.png?raw=true">
