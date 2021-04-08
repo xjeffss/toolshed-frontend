@@ -38,5 +38,9 @@ This was the original login screen.  The image was created by Charles Brisbee on
 
 <img src="./toolshed-frontend/public/images/91A01B82-B2B5-4AF5-B4E5-2346E0A5739E.jpeg">
 
+The original point of the house was created using angled blocks colored as the background to cut the top corners off a large yellow rectangle.  I changed this to make the house a square below the roof line and adding a triangle on top to match the roof line. 
+
+<img src="https://github.com/xjeffss/toolshed-frontend/blob/main/toolshed-frontend/public/images/B1F6332E-359A-4CB0-AB93-52ED5D0D7B0C.png?raw=true">
+
 Once the user registers or logs in, it takes him to his "toolshed" page where an opening garage door reveals a list of his tools and neighborhoods of which he is a member.
 <img src="https://github.com/xjeffss/toolshed-frontend/blob/main/toolshed-frontend/public/images/Screen%20Shot%202021-04-07%20at%208.21.06%20AM.png?raw=true">
