@@ -37,4 +37,4 @@ This website was the result of a question I asked to people around me, "What web
 This was the original login screen.  The image was created by Charles Brisbee on Code Pen.  I studied his work and made modifications to make it look like the second picture.
 
 <img src="./toolshed-frontend/public/images/91A01B82-B2B5-4AF5-B4E5-2346E0A5739E.jpeg">
-<img src="./toolshed-frontend/public/images/Screen Shot 2021-04-08 at 2.01.57 PM.png">
+<img src="./public/images/Screen Shot 2021-04-08 at 2.01.57 PM.png">
