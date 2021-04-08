@@ -1,4 +1,4 @@
-# tool-shed
+# Toolshed
 
 Objective - create an app that neighbors can log on to and list the tools that they have that their neighbors can borrow.  Their neighborhood can look at a neighborhood created for them that lists all the tools available for them to borrow.
 
@@ -7,6 +7,21 @@ Objective - create an app that neighbors can log on to and list the tools that t
 [Here is the frontend repository.](https://github.com/xjeffss/toolshed-frontend/tree/main/toolshed-frontend)
 
 [Here is the backend repository.](https://github.com/xjeffss/toolshed-backend)
+
+## Tools Used
+
+<img src="https://github.com/xjeffss/toolshed-frontend/blob/main/toolshed-frontend/public/images/5D0BA7CF-A86C-411F-AD9B-ED697C1478D8.png?raw=true">
+
+
+## Planning
+
+I put together a Powerpoint to plan what I wanted the website to look like and an ERD to plan how it would interact.
+
+<img src="https://github.com/xjeffss/toolshed-frontend/blob/main/toolshed-frontend/public/images/3E3BC721-B835-4EA3-83D7-617CA72C748E.png?raw=true">
+
+This is the user page with future goals of tracking lending to your neighbors.
+
+<img src="https://github.com/xjeffss/toolshed-frontend/blob/main/toolshed-frontend/public/images/ECE3796B-8379-46A6-B2D7-625B24F785F1.png?raw=true">
 
 ## User stories
 * A neighbor doesn't want to buy a tool to use once every three years
@@ -70,3 +85,10 @@ and how it is requested, retrieved and displayed
 <img src="https://github.com/xjeffss/toolshed-frontend/blob/main/toolshed-frontend/public/images/Screen%20Shot%202021-04-07%20at%208.16.57%20AM.png?raw=true">
 
 <img src="">
+
+## Future work planned:
+
+* Login Token - remembers the log in until page closure or log out.  Important so that when a tool or neighborhood is created, the page can be refreshed and not lose track of the user.
+* Hot links to the home page or user page.
+* Password and Passcode encryption.
+
