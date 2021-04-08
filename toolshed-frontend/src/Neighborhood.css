@@ -1,22 +1,26 @@
 .mainHood {
     text-align: center;
+    padding: 3%;
+    color:lemonchiffon;
+    font-size: 5vw;
+
+}
+.list{
     margin: 5%;
     border:rgb(30, 127, 184) solid 5px;
-    padding: 5%;
-    color:lemonchiffon;
-    height: 80vh;
+    height: 20vh auto;
     width: 90vw;
-    font-size: 5vw;
-}
-.toolList{
-    color: lightgrey;
-    column-span: all;
-    font-size: 3vw;
-    margin: 1vw;
 }
 .neighbor{
     color:rgb(255, 136, 0);
     text-align: left;
     font-size: 3vw;
-    margin: 0vw;  
+    margin: 2vw;  
+    display: inline-table;
+
+}
+.toolList{
+    color: lightgrey;
+    font-size: 3vw;
+    margin: 1vw;  
 }
