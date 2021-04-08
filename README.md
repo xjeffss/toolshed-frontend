@@ -2,7 +2,9 @@
 
 Objective - create an app that neighbors can log on to and list the tools that they have that their neighbors can borrow.  Their neighborhood can look at a neighborhood created for them that lists all the tools available for them to borrow.
 
-http://toolshed.surge.sh/
+[Here is the published project.](http://toolshed.surge.sh/)
+[Here is the frontend repository.]
+[Here is the backend repository.]
 
 MVP - 
 * Create User
