@@ -157,7 +157,11 @@ addHood = async (e) => {
         <h1>
            Neighborhood Toolshed
         </h1>
-       
+
+        <div id="cloud-circle">   
+        </div>
+        <div id="cloud-circle2">   
+        </div>
         <main>
 
           <Route exact path="/" render = {(routerProps) => (
@@ -211,7 +215,7 @@ addHood = async (e) => {
           />)}
           />
         </main>
-
+        
       </div>
     )
   }

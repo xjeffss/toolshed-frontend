@@ -79,7 +79,7 @@ console.log(this.state.neighborhoodTools);
                     <div className="toolList">{tool.toolName}</div>))} </li>
                     
             )
-            )}
+            )}<div className="grassBackgroundHood"></div>
             </div>
 
         )

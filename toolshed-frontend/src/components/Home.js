@@ -149,7 +149,7 @@ render(){
 			<div class="door-shadow"></div>
 		</div>
 	</div>
-       
+	<div className="grassBackgroundHome"></div>
         </div>
     )
 }
