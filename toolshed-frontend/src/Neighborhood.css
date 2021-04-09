@@ -24,3 +24,13 @@
     font-size: 3vw;
     margin: 1vw;  
 }
+.grassBackgroundHood{
+    background: rgba(0, 128, 0);
+    position:absolute;
+    width: 100vw;
+    height:19vh;
+    bottom: 5vh;
+    margin-left: -6vw;
+    margin-bottom: -6vh;
+    z-index: -1;
+  }

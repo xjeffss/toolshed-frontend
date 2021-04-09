@@ -5,9 +5,12 @@
     font-size: 14pt;
 
 }
+h3 {
+  color:rgb(255, 94, 0);
+}
 .homepage{
     display: flex;
-   
+    color:rgb(255, 94, 0);
     align-items: center;
     align-content: space-around;
 }
@@ -66,16 +69,7 @@ login {
     top: 84px;
     width: 283px;
   }
-  body .house-wrap .blue-block {
-    background-color: steelblue;
-    position: absolute;
-    width: 25px;
-    height: 34px;
-    z-index: 1;
-    right: -25px;
-    top: 183px;
-    border-left: 3px solid #333;
-  }
+
   body .house-wrap .roof {
     height: 30px;
     position: absolute;
@@ -482,4 +476,14 @@ login {
     bottom: 0;
     border-radius: 0 83px 0 0;
     filter: blur(4px);
+  }
+  .grassBackgroundHome{
+    background: rgba(0, 128, 0);
+    position:relative;
+    width: 100vw;
+    height:19vh;
+    bottom: 7vh;
+    margin-left: -7.5vw;
+    margin-bottom: -17vh;
+    z-index: -1;
   }
